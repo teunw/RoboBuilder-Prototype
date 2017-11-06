@@ -1,22 +1,23 @@
 ﻿using System;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class Receiver : MonoBehaviour
 {
-    public Vector3 startPos;
-    public Quaternion startRot;
-    public Vector3 startScale;
+    private Vector3 startPos;
+    private Quaternion startRot;
+    private Vector3 startScale;
     
-    public List<RobotBehaviourScript> BehaviourScripts = new List<RobotBehaviourScript>();
     public bool scriptsEnabled = true;
+    public int currentScript = 0;
     
     void Start()
     {
         startPos = transform.position;
         startRot = transform.rotation;
         startScale = transform.localScale;
+        
+        NextScript();
+        currentScript = 0;
     }
 
     void Update()
@@ -36,7 +37,23 @@ public class Receiver : MonoBehaviour
             Debug.Log("3");
             StopScripts();
         }
+        if (Input.GetKeyDown(KeyCode.Alpha4))
+        {
+            Debug.Log("4");
+            NextScript();
+        }
     }
+
+    private void NextScript()
+    {
+        currentScript = (currentScript+1)% gameObject.GetComponents<RobotBehaviourScript>().Length;
+        var scripts = gameObject.GetComponents<RobotBehaviourScript>();
+        for (int i = 0; i < scripts.Length; i++)
+        {
+            scripts[i].enabled = i == currentScript; 
+        }
+    }
+
 
     public void OnTriggerEnter(Collider other)
     {
@@ -45,7 +62,6 @@ public class Receiver : MonoBehaviour
         {
             Type type = Type.GetType(transmitter.BehaviourScript);
             gameObject.AddComponent(type);
-            BehaviourScripts.Add((RobotBehaviourScript) gameObject.GetComponent(type));
         }
     }
 
