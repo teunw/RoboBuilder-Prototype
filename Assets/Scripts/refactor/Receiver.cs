@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Reflection;
 using UnityEngine;
 
 public class Receiver : MonoBehaviour
@@ -42,10 +43,52 @@ public class Receiver : MonoBehaviour
             Debug.Log("4");
             NextScript();
         }
+        if (Input.GetKeyDown(KeyCode.Alpha5))
+        {
+            RobotBehaviourScript script = gameObject.GetComponents<RobotBehaviourScript>()[currentScript];
+            var fields = GetFields(script);
+            foreach (var field in fields)
+            {
+                if (field.Name == "Step")
+                {
+                    SetField(field,script);
+                }
+            }
+        }
     }
 
-    private void NextScript()
+    private FieldInfo[] GetFields(RobotBehaviourScript script)
     {
+        FieldInfo[] rProps = script.GetType().GetFields();
+        String[] fields = new String[rProps.Length];
+        for (int i = 0; i < rProps.Length; i++)
+        {
+            fields[i] = rProps[i].Name;
+            Debug.Log(rProps[i].Name);
+        }
+        return rProps;
+    }
+
+    private void SetField(FieldInfo fieldInfo, RobotBehaviourScript script)
+    {
+        if (fieldInfo == null)
+        {
+            throw new NullReferenceException("fieldInfo null"); 
+        }
+        try
+        {
+            fieldInfo.SetValue(script,new Vector3(1f,1f,1f));
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            throw;
+        }
+    }
+
+
+    private void NextScript()
+    {     
         currentScript = (currentScript+1)% gameObject.GetComponents<RobotBehaviourScript>().Length;
         var scripts = gameObject.GetComponents<RobotBehaviourScript>();
         for (int i = 0; i < scripts.Length; i++)
