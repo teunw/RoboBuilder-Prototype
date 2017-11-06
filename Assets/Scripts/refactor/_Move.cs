@@ -10,4 +10,9 @@ public class _Move : RobotBehaviourScript {
 			this.transform.position = this.transform.position + Step * Time.deltaTime;
 		}
 	}
+
+	public override string ToString()
+	{
+		return this.name;
+	}
 }

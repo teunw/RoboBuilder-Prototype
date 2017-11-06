@@ -17,6 +17,8 @@
         <e p="Scripts" t="Include">
           <e p="refactor" t="Include">
             <e p="_Move.cs" t="Include" />
+            <e p="_Rotate.cs" t="Include" />
+            <e p="_Scale.cs" t="Include" />
             <e p="Receiver.cs" t="Include" />
             <e p="Transmitter.cs" t="Include" />
           </e>

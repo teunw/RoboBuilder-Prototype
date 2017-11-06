@@ -1,18 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Receiver : MonoBehaviour
 {
     public Vector3 startPos;
     public Quaternion startRot;
+    public Vector3 startScale;
+    
     public List<RobotBehaviourScript> BehaviourScripts = new List<RobotBehaviourScript>();
     public bool scriptsEnabled = true;
-
+    
     void Start()
     {
         startPos = transform.position;
         startRot = transform.rotation;
+        startScale = transform.localScale;
     }
 
     void Update()
@@ -67,5 +71,6 @@ public class Receiver : MonoBehaviour
     {
         transform.position = startPos;
         transform.rotation = startRot;
+        transform.localScale = startScale;
     }
 }
