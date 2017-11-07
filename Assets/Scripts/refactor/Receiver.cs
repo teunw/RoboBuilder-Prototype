@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Reflection;
 using UnityEngine;
@@ -53,7 +52,6 @@ public class Receiver : MonoBehaviour
 //            {   
 //                SetField(field,script);
 //            }
-            
         }
     }
 
@@ -104,17 +102,48 @@ public class Receiver : MonoBehaviour
         }
     }
 
-
+    /// <summary>
+    /// Method that moves the currently executing script
+    /// </summary>
     private void NextScript()
     {
-        currentScript = (currentScript + 1) % gameObject.GetComponents<RobotBehaviourScript>().Length;
-        var scripts = gameObject.GetComponents<RobotBehaviourScript>();
+        // todo : make sure loops in loops are possible
+        // set the currentscript to the index of the start when a end of a loop is hit
+        var scriptNew = GetComponents<RobotBehaviourScript>()[currentScript + 1] as _Loop;
+        if (scriptNew != null &&
+            !scriptNew.start)
+        {
+            if (!scriptNew.EndOfLoop())
+            {
+                currentScript = GetIndexOfScript(scriptNew.other);
+                return;
+            }
+        }
+
+        // if its not the end of a for loop
+        // go to the next script
+        currentScript = (currentScript + 1) % GetComponents<RobotBehaviourScript>().Length;
+        var scripts = GetComponents<RobotBehaviourScript>();
         for (int i = 0; i < scripts.Length; i++)
         {
             scripts[i].enabled = i == currentScript;
         }
     }
 
+    /// <summary>
+    /// Helper method to get the index of the for loop start
+    /// </summary>
+    private int GetIndexOfScript(RobotBehaviourScript script)
+    {
+        for (int i = 0; i < GetComponents<RobotBehaviourScript>().Length; i++)
+        {
+            if (GetComponents<RobotBehaviourScript>()[i] == script)
+            {
+                return i;
+            }
+        }
+        throw new KeyNotFoundException();
+    }
 
     public void OnTriggerEnter(Collider other)
     {
@@ -126,6 +155,9 @@ public class Receiver : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Pauzes all scripta
+    /// </summary>
     public void PauzeScripts()
     {
         foreach (RobotBehaviourScript script in this.gameObject.GetComponents<RobotBehaviourScript>())
@@ -135,6 +167,9 @@ public class Receiver : MonoBehaviour
         scriptsEnabled = !scriptsEnabled;
     }
 
+    /// <summary>
+    /// Pauses all scripts and resets it
+    /// </summary>
     public void StopScripts()
     {
         if (scriptsEnabled)
@@ -144,6 +179,9 @@ public class Receiver : MonoBehaviour
         ResetScripts();
     }
 
+    /// <summary>
+    /// Resets the scripts to the starting position, rotation and scale
+    /// </summary>
     public void ResetScripts()
     {
         transform.position = startPos;
