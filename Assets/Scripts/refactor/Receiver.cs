@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.Reflection;
 using UnityEngine;
 
@@ -7,16 +9,16 @@ public class Receiver : MonoBehaviour
     private Vector3 startPos;
     private Quaternion startRot;
     private Vector3 startScale;
-    
+
     public bool scriptsEnabled = true;
     public int currentScript = 0;
-    
+
     void Start()
     {
         startPos = transform.position;
         startRot = transform.rotation;
         startScale = transform.localScale;
-        
+
         NextScript();
         currentScript = 0;
     }
@@ -47,37 +49,53 @@ public class Receiver : MonoBehaviour
         {
             RobotBehaviourScript script = gameObject.GetComponents<RobotBehaviourScript>()[currentScript];
             var fields = GetFields(script);
-            foreach (var field in fields)
+//            foreach (var field in fields)
+//            {   
+//                SetField(field,script);
+//            }
+            
+        }
+    }
+
+    /// <summary>
+    /// Gets all fields on the script that have the attribute ShowInRobot
+    /// </summary>
+    /// <param name="script"></param>
+    /// <returns></returns>
+    private List<FieldInfo> GetFields(RobotBehaviourScript script)
+    {
+        FieldInfo[] allFields = script.GetType().GetFields();
+        List<FieldInfo> fields = new List<FieldInfo>();
+        foreach (var field in allFields)
+        {
+            object[] a = field.GetCustomAttributes(true);
+            foreach (var attrib in a)
             {
-                if (field.Name == "Step")
+                if (attrib.GetType().Name == typeof(ShowInRobot).Name)
                 {
-                    SetField(field,script);
+                    fields.Add(field);
                 }
             }
         }
+        return fields;
     }
 
-    private FieldInfo[] GetFields(RobotBehaviourScript script)
-    {
-        FieldInfo[] rProps = script.GetType().GetFields();
-        String[] fields = new String[rProps.Length];
-        for (int i = 0; i < rProps.Length; i++)
-        {
-            fields[i] = rProps[i].Name;
-            Debug.Log(rProps[i].Name);
-        }
-        return rProps;
-    }
-
+    /// <summary>
+    /// Sets the value to vector.one this is for now only for testing purposes.
+    /// TODO : set it so it accepts all kind of objects
+    /// </summary>
+    /// <param name="fieldInfo"></param>
+    /// <param name="script"></param>
+    /// <exception cref="NullReferenceException"></exception>
     private void SetField(FieldInfo fieldInfo, RobotBehaviourScript script)
     {
         if (fieldInfo == null)
         {
-            throw new NullReferenceException("fieldInfo null"); 
+            throw new NullReferenceException("fieldInfo null");
         }
         try
         {
-            fieldInfo.SetValue(script,new Vector3(1f,1f,1f));
+            fieldInfo.SetValue(script, new Vector3(1f, 1f, 1f));
         }
         catch (Exception e)
         {
@@ -88,12 +106,12 @@ public class Receiver : MonoBehaviour
 
 
     private void NextScript()
-    {     
-        currentScript = (currentScript+1)% gameObject.GetComponents<RobotBehaviourScript>().Length;
+    {
+        currentScript = (currentScript + 1) % gameObject.GetComponents<RobotBehaviourScript>().Length;
         var scripts = gameObject.GetComponents<RobotBehaviourScript>();
         for (int i = 0; i < scripts.Length; i++)
         {
-            scripts[i].enabled = i == currentScript; 
+            scripts[i].enabled = i == currentScript;
         }
     }
 
