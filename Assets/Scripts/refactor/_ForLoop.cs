@@ -17,11 +17,17 @@ public class _ForLoop : _Loop
 	public override bool EndOfLoop()
 	{
 		currentIteration += step;
-		if (currentIteration < nrOfLoops)
+		if (nrOfLoops < currentIteration)
 		{
 			currentIteration = 0;
 			return true;
 		}
 		return false;
+	}
+
+	public override void Copy<T>(ref T copy)
+	{
+		//todo : fix it so this doesn't have to be implemented 
+		throw new System.NotImplementedException();
 	}
 }

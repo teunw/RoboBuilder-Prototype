@@ -50,7 +50,7 @@ public class Receiver : MonoBehaviour
             var fields = GetFields(script);
 //            foreach (var field in fields)
 //            {   
-//                SetField(field,script);
+//                SetField(field,script,new Vector3(1f, 1f, 1f));
 //            }
         }
     }
@@ -85,7 +85,7 @@ public class Receiver : MonoBehaviour
     /// <param name="fieldInfo"></param>
     /// <param name="script"></param>
     /// <exception cref="NullReferenceException"></exception>
-    private void SetField(FieldInfo fieldInfo, RobotBehaviourScript script)
+    private void SetField(FieldInfo fieldInfo, RobotBehaviourScript script, object value)
     {
         if (fieldInfo == null)
         {
@@ -93,7 +93,7 @@ public class Receiver : MonoBehaviour
         }
         try
         {
-            fieldInfo.SetValue(script, new Vector3(1f, 1f, 1f));
+            fieldInfo.SetValue(script, value);
         }
         catch (Exception e)
         {
@@ -107,13 +107,12 @@ public class Receiver : MonoBehaviour
     /// </summary>
     private void NextScript()
     {
-        // todo : make sure loops in loops are possible
+        // todo : make it so loops in loops are possible (currently it's not)
         // set the currentscript to the index of the start when a end of a loop is hit
         var scriptNew = GetComponents<RobotBehaviourScript>()[currentScript + 1] as _Loop;
-        if (scriptNew != null &&
-            !scriptNew.start)
+        if (scriptNew != null && !scriptNew.start)
         {
-            if (!scriptNew.EndOfLoop())
+            if (scriptNew.EndOfLoop())
             {
                 currentScript = GetIndexOfScript(scriptNew.other);
                 return;
@@ -124,6 +123,9 @@ public class Receiver : MonoBehaviour
         // go to the next script
         currentScript = (currentScript + 1) % GetComponents<RobotBehaviourScript>().Length;
         var scripts = GetComponents<RobotBehaviourScript>();
+        
+        // todo recursive function that adds until its not a _Loop script
+        
         for (int i = 0; i < scripts.Length; i++)
         {
             scripts[i].enabled = i == currentScript;
@@ -147,16 +149,18 @@ public class Receiver : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
+        Debug.Log("trigger called");
         var transmitter = other.GetComponent<Transmitter>();
         if (transmitter != null) // todo : don't add the same script double
         {
-            Type type = Type.GetType(transmitter.BehaviourScript);
-            gameObject.AddComponent(type);
+            RobotBehaviourScript script = (RobotBehaviourScript)gameObject.AddComponent(transmitter.BehaviourScript.GetType());
+            transmitter.BehaviourScript.Copy(ref script);
         }
     }
 
     /// <summary>
     /// Pauzes all scripta
+    /// todo : make sure only the current script is played
     /// </summary>
     public void PauzeScripts()
     {
