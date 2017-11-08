@@ -17,7 +17,7 @@ public class _ForLoop : _Loop
 	public override bool EndOfLoop()
 	{
 		currentIteration += step;
-		if (nrOfLoops < currentIteration)
+		if (nrOfLoops <= currentIteration)
 		{
 			currentIteration = 0;
 			return true;
