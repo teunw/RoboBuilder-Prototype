@@ -16,6 +16,8 @@
         </e>
         <e p="Scripts" t="Include">
           <e p="refactor" t="Include">
+            <e p="_ForLoop.cs" t="Include" />
+            <e p="_Loop.cs" t="Include" />
             <e p="_Move.cs" t="Include" />
             <e p="_Rotate.cs" t="Include" />
             <e p="_Scale.cs" t="Include" />
