@@ -2195,12 +2195,12 @@ GameObject:
   - component: {fileID: 467919782}
   - component: {fileID: 467919783}
   - component: {fileID: 467919787}
-  - component: {fileID: 467919786}
   - component: {fileID: 467919790}
+  - component: {fileID: 467919786}
   - component: {fileID: 467919785}
   - component: {fileID: 467919788}
-  - component: {fileID: 467919789}
   - component: {fileID: 467919784}
+  - component: {fileID: 467919789}
   m_Layer: 0
   m_Name: Robot
   m_TagString: Untagged
@@ -2416,11 +2416,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Robot: {fileID: 0}
-  enabled: 0
+  enabled: 1
   start: 0
   other: {fileID: 467919790}
   currentIteration: 0
-  nrOfLoops: 1
+  nrOfLoops: 2
   step: 1
 --- !u!114 &467919790
 MonoBehaviour:
@@ -2434,7 +2434,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Robot: {fileID: 0}
-  enabled: 0
+  enabled: 1
   start: 1
   other: {fileID: 467919789}
   currentIteration: 0
@@ -8421,7 +8421,7 @@ Prefab:
     - target: {fileID: 224000013127654674, guid: d46cf6b1ad9d84a48ae7548a2a6b41b3,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: 339.5
+      value: 266.5
       objectReference: {fileID: 0}
     - target: {fileID: 224000013127654674, guid: d46cf6b1ad9d84a48ae7548a2a6b41b3,
         type: 2}
@@ -8826,7 +8826,7 @@ Prefab:
     - target: {fileID: 224000012623161658, guid: d46cf6b1ad9d84a48ae7548a2a6b41b3,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: 258.5
+      value: 185.5
       objectReference: {fileID: 0}
     - target: {fileID: 224000012623161658, guid: d46cf6b1ad9d84a48ae7548a2a6b41b3,
         type: 2}

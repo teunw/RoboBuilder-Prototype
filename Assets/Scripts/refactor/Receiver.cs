@@ -117,13 +117,11 @@ public class Receiver : MonoBehaviour
         int currentAddOne = (currentScript + 1) % GetComponents<RobotBehaviourScript>().Length;
         var script = GetComponents<RobotBehaviourScript>()[currentAddOne] as _Loop;
         if (script == null) return currentScript;
-        
         if (!script.start && !script.EndOfLoop())
         {
-            currentScript = GetIndexOfScript(script.other) + 1 % GetComponents<RobotBehaviourScript>().Length;
-            return currentScript;
+            currentScript = GetIndexOfScript(script.other);
+            return ifForLoop();
         }
-        
         currentScript = (currentScript + 1) % GetComponents<RobotBehaviourScript>().Length;
         return ifForLoop();
     }
