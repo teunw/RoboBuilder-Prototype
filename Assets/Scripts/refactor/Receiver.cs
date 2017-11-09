@@ -108,30 +108,29 @@ public class Receiver : MonoBehaviour
     private void NextScript()
     {
         // set the currentscript to the index of the start when a end of a loop is hit
+        currentScript = ifForLoop();
+        SetNext();
+    }
 
+    private int ifForLoop()
+    {
         int currentAddOne = (currentScript + 1) % GetComponents<RobotBehaviourScript>().Length;
+        var script = GetComponents<RobotBehaviourScript>()[currentAddOne] as _Loop;
+        if (script == null) return currentScript;
         
-        var scriptNew = GetComponents<RobotBehaviourScript>()[currentAddOne] as _Loop;
+        if (!script.start && !script.EndOfLoop())
+        {
+            currentScript = GetIndexOfScript(script.other) + 1 % GetComponents<RobotBehaviourScript>().Length;
+            return currentScript;
+        }
+        
+        currentScript = (currentScript + 1) % GetComponents<RobotBehaviourScript>().Length;
+        return ifForLoop();
+    }
+
+    private void SetNext()
+    {
         RobotBehaviourScript[] scripts;
-        if (scriptNew != null && !scriptNew.start)
-        {
-            if (!scriptNew.EndOfLoop())
-            {
-                currentScript = GetIndexOfScript(scriptNew.other)+1;
-                scripts = GetComponents<RobotBehaviourScript>();
-                for (int i = 0; i < scripts.Length; i++)
-                {
-                    scripts[i].enabled = i == currentScript;
-                }
-                return;
-            }
-        }
-        else if (scriptNew != null)
-        {
-            //todo : get the next one which isn't a forloop start
-            currentScript = (currentScript + 1) % GetComponents<RobotBehaviourScript>().Length; //todo : move this to a method
-        }
-        
         // if its not the end of a for loop
         // go to the next script
         currentScript = (currentScript + 1) % GetComponents<RobotBehaviourScript>().Length;
@@ -163,7 +162,8 @@ public class Receiver : MonoBehaviour
         var transmitter = other.GetComponent<Transmitter>();
         if (transmitter != null) // todo : don't add the same script double
         {
-            RobotBehaviourScript script = (RobotBehaviourScript)gameObject.AddComponent(transmitter.BehaviourScript.GetType());
+            RobotBehaviourScript script =
+                (RobotBehaviourScript) gameObject.AddComponent(transmitter.BehaviourScript.GetType());
             transmitter.BehaviourScript.Copy(ref script);
             // todo : make it so this doesn;t have to happen
             transmitter.enabled = true;
