@@ -107,6 +107,10 @@ public class Receiver : MonoBehaviour
     /// </summary>
     private void NextScript()
     {
+        if (GetComponents<RobotBehaviourScript>().Length == 0)
+        {
+            return;
+        }
         // set the currentscript to the index of the start when a end of a loop is hit
         currentScript = ifForLoop();
         SetNext();
@@ -129,8 +133,6 @@ public class Receiver : MonoBehaviour
     private void SetNext()
     {
         RobotBehaviourScript[] scripts;
-        // if its not the end of a for loop
-        // go to the next script
         currentScript = (currentScript + 1) % GetComponents<RobotBehaviourScript>().Length;
         scripts = GetComponents<RobotBehaviourScript>();
         for (int i = 0; i < scripts.Length; i++)
@@ -158,6 +160,11 @@ public class Receiver : MonoBehaviour
     {
         Debug.Log("trigger called");
         var transmitter = other.GetComponent<Transmitter>();
+        AddScript(transmitter);
+    }
+
+    public void AddScript(Transmitter transmitter)
+    {
         if (transmitter != null) // todo : don't add the same script double
         {
             RobotBehaviourScript script =
@@ -166,6 +173,7 @@ public class Receiver : MonoBehaviour
             // todo : make it so this doesn;t have to happen
             transmitter.enabled = true;
         }
+        
     }
 
     /// <summary>
