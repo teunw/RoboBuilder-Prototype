@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System;
 using UnityEngine;
 
 public class _Rotate : RobotBehaviourScript {
@@ -10,6 +9,20 @@ public class _Rotate : RobotBehaviourScript {
 		if (enabled)
 		{
 			transform.eulerAngles = transform.eulerAngles + Step * Time.deltaTime;
+		}
+	}
+	
+	public override void Copy<T>(ref T copyO)
+	{
+		var copy = copyO as _Rotate;
+		if (copy != null)
+		{
+			copy.Step = Step;
+			copy.enabled = enabled;
+		}
+		else
+		{
+			throw new NotImplementedException("Somthing went horribly wrong");
 		}
 	}
 }

@@ -2194,8 +2194,13 @@ GameObject:
   - component: {fileID: 467919780}
   - component: {fileID: 467919782}
   - component: {fileID: 467919783}
+  - component: {fileID: 467919787}
+  - component: {fileID: 467919790}
+  - component: {fileID: 467919786}
   - component: {fileID: 467919785}
+  - component: {fileID: 467919788}
   - component: {fileID: 467919784}
+  - component: {fileID: 467919789}
   m_Layer: 0
   m_Name: Robot
   m_TagString: Untagged
@@ -2319,7 +2324,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec429ee4719251141b1190dc35afc788, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scriptsEnabled: 0
+  scriptsEnabled: 1
   currentScript: 0
 --- !u!114 &467919784
 MonoBehaviour:
@@ -2329,13 +2334,49 @@ MonoBehaviour:
   m_GameObject: {fileID: 467919775}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c2e5ca63bf3e3f448bf2853ac41390d1, type: 3}
+  m_Script: {fileID: 11500000, guid: b2e75ebcc7e7c4a4797cdb009c557992, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Robot: {fileID: 0}
-  enabled: 1
-  Step: {x: 0.5, y: 0.5, z: 0.5}
+  enabled: 0
+  start: 0
+  other: {fileID: 467919786}
+  currentIteration: 0
+  nrOfLoops: 5
+  step: 1
 --- !u!114 &467919785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 467919775}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66c4b9a355a78314abbb0ee3dc905dab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Robot: {fileID: 0}
+  enabled: 0
+  Step: {x: 0, y: 0, z: 0.1}
+--- !u!114 &467919786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 467919775}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2e75ebcc7e7c4a4797cdb009c557992, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Robot: {fileID: 0}
+  enabled: 0
+  start: 1
+  other: {fileID: 467919784}
+  currentIteration: 0
+  nrOfLoops: 1
+  step: 1
+--- !u!114 &467919787
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -2349,6 +2390,56 @@ MonoBehaviour:
   Robot: {fileID: 0}
   enabled: 1
   Step: {x: 0, y: 0, z: 0.1}
+--- !u!114 &467919788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 467919775}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66c4b9a355a78314abbb0ee3dc905dab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Robot: {fileID: 0}
+  enabled: 1
+  Step: {x: 0, y: 0, z: 0.1}
+--- !u!114 &467919789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 467919775}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2e75ebcc7e7c4a4797cdb009c557992, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Robot: {fileID: 0}
+  enabled: 1
+  start: 0
+  other: {fileID: 467919790}
+  currentIteration: 0
+  nrOfLoops: 2
+  step: 1
+--- !u!114 &467919790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 467919775}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2e75ebcc7e7c4a4797cdb009c557992, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Robot: {fileID: 0}
+  enabled: 1
+  start: 1
+  other: {fileID: 467919789}
+  currentIteration: 0
+  nrOfLoops: 1
+  step: 1
 --- !u!1 &534200965
 GameObject:
   m_ObjectHideFlags: 0
@@ -3220,6 +3311,7 @@ GameObject:
   - component: {fileID: 745257717}
   - component: {fileID: 745257716}
   - component: {fileID: 745257715}
+  - component: {fileID: 745257724}
   m_Layer: 0
   m_Name: RotationCube
   m_TagString: Untagged
@@ -3251,7 +3343,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 331567b1a24afe94e813569a36f5850c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BehaviourScript: _Rotate
+  BehaviourScript: {fileID: 745257724}
 --- !u!114 &745257716
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3392,6 +3484,20 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 745257713}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &745257724
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 745257713}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2e5ca63bf3e3f448bf2853ac41390d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Robot: {fileID: 0}
+  enabled: 0
+  Step: {x: 0.5, y: 0.5, z: 0.5}
 --- !u!1 &760814134
 GameObject:
   m_ObjectHideFlags: 0
@@ -3517,6 +3623,7 @@ GameObject:
   - component: {fileID: 782445542}
   - component: {fileID: 782445541}
   - component: {fileID: 782445540}
+  - component: {fileID: 782445549}
   m_Layer: 0
   m_Name: ScaleCube
   m_TagString: Untagged
@@ -3548,7 +3655,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 331567b1a24afe94e813569a36f5850c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BehaviourScript: _Scale
+  BehaviourScript: {fileID: 782445549}
 --- !u!114 &782445541
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3689,6 +3796,20 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 782445538}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &782445549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 782445538}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59d06280cf4f174418c5d6a447adc533, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Robot: {fileID: 0}
+  enabled: 0
+  Step: {x: 0.1, y: 0.1, z: 0.1}
 --- !u!1 &797943902
 GameObject:
   m_ObjectHideFlags: 0
@@ -8300,7 +8421,7 @@ Prefab:
     - target: {fileID: 224000013127654674, guid: d46cf6b1ad9d84a48ae7548a2a6b41b3,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: 314.5
+      value: 266.5
       objectReference: {fileID: 0}
     - target: {fileID: 224000013127654674, guid: d46cf6b1ad9d84a48ae7548a2a6b41b3,
         type: 2}
@@ -8705,7 +8826,7 @@ Prefab:
     - target: {fileID: 224000012623161658, guid: d46cf6b1ad9d84a48ae7548a2a6b41b3,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: 233.5
+      value: 185.5
       objectReference: {fileID: 0}
     - target: {fileID: 224000012623161658, guid: d46cf6b1ad9d84a48ae7548a2a6b41b3,
         type: 2}
@@ -8715,52 +8836,52 @@ Prefab:
     - target: {fileID: 224000012484682510, guid: d46cf6b1ad9d84a48ae7548a2a6b41b3,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 34.5
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 224000010031187690, guid: d46cf6b1ad9d84a48ae7548a2a6b41b3,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: -22
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 224000012859001416, guid: d46cf6b1ad9d84a48ae7548a2a6b41b3,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 12.5
+      value: 20.5
       objectReference: {fileID: 0}
     - target: {fileID: 224000012504011746, guid: d46cf6b1ad9d84a48ae7548a2a6b41b3,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: -9.5
+      value: 20.5
       objectReference: {fileID: 0}
     - target: {fileID: 224000012326194302, guid: d46cf6b1ad9d84a48ae7548a2a6b41b3,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 224000010901609716, guid: d46cf6b1ad9d84a48ae7548a2a6b41b3,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 25
+      value: 33
       objectReference: {fileID: 0}
     - target: {fileID: 224000010722234208, guid: d46cf6b1ad9d84a48ae7548a2a6b41b3,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 3
+      value: 33
       objectReference: {fileID: 0}
     - target: {fileID: 224000010535295132, guid: d46cf6b1ad9d84a48ae7548a2a6b41b3,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: -22
+      value: 33
       objectReference: {fileID: 0}
     - target: {fileID: 224000010358937380, guid: d46cf6b1ad9d84a48ae7548a2a6b41b3,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 224000012747905524, guid: d46cf6b1ad9d84a48ae7548a2a6b41b3,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 224000010031187690, guid: d46cf6b1ad9d84a48ae7548a2a6b41b3,
         type: 2}
@@ -9775,6 +9896,7 @@ GameObject:
   - component: {fileID: 2095284306}
   - component: {fileID: 2095284305}
   - component: {fileID: 2095284307}
+  - component: {fileID: 2095284308}
   m_Layer: 0
   m_Name: MoveCube
   m_TagString: Untagged
@@ -9946,7 +10068,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 331567b1a24afe94e813569a36f5850c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BehaviourScript: _Move
+  BehaviourScript: {fileID: 0}
+--- !u!114 &2095284308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2095284297}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66c4b9a355a78314abbb0ee3dc905dab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Robot: {fileID: 0}
+  enabled: 0
+  Step: {x: 0.1, y: 0, z: 0.1}
 --- !u!1 &2108624722
 GameObject:
   m_ObjectHideFlags: 0
