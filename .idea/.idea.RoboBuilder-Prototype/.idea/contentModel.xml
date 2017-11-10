@@ -15,10 +15,10 @@
           </e>
         </e>
         <e p="Scripts" t="Include">
-          <e p="ButtonsTouch.cs" t="Include" />
           <e p="ConnectPoint.cs" t="Include" />
           <e p="ConnectPointManager.cs" t="Include" />
           <e p="GrabbableObjectMidair.cs" t="Include" />
+          <e p="MaterialToggle.cs" t="Include" />
           <e p="refactor" t="Include">
             <e p="_ForLoop.cs" t="Include" />
             <e p="_Loop.cs" t="Include" />
