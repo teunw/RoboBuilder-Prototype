@@ -1,26 +1,23 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using UnityEditor;
 using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.Serialization;
+using UnityEngine.UI;
 using VRTK;
 
-public class ButtonsTouch : VRTK.VRTK_InteractableObject { 
-
-    public Material colorOn;
-    public Material colorOff;
-
-    public GameObject [] Objects;
-
-    bool turnedOn = false;
-
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+public class ButtonsTouch : VRTK.VRTK_InteractableObject
+{
+    public Material ColorOn;
+    public Material ColorOff;
+    public string Method;
+    public GameObject[] Objects;
+    public ButtonsTouchEditor OnButtonTouched;
+    
+    private bool _turnedOn = false;
 
     public override void OnInteractableObjectTouched(InteractableObjectEventArgs e)
     {
@@ -28,10 +25,15 @@ public class ButtonsTouch : VRTK.VRTK_InteractableObject {
 
         foreach (var obj in Objects)
         {
-            obj.GetComponent<Renderer>().material = turnedOn ? colorOn : colorOff;
+            obj.GetComponent<Renderer>().material = _turnedOn ? ColorOn : ColorOff;
         }
-        
-        turnedOn = !turnedOn;
 
+        _turnedOn = !_turnedOn;
+        OnButtonTouched.OnTouched.Invoke();
     }
+}
+[Serializable]
+public class ButtonsTouchEditor
+{
+    public UnityEvent OnTouched;
 }

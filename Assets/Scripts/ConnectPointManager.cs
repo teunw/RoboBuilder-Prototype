@@ -8,6 +8,13 @@ public class ConnectPointManager : MonoBehaviour
 {
 	public ConnectPoint[] ConnectPoints;
 	public StartCube StartCube;
+	public Receiver Receiver;
+
+	public virtual void Start()
+	{
+		var manager = this;
+		ConnectPoints.ForEach(cp => cp.ConnectPointManager = manager);
+	}
 
 	public void DisableExcept(ConnectPoint connectPoint)
 	{

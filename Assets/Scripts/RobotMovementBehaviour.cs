@@ -25,14 +25,12 @@ public class RobotMovementBehaviour : RobotBehaviourScript
         
         _currentLerp += Time.deltaTime;
         var lerpPos = Vector3.Lerp(_startPosition, MoveLocation, _currentLerp / LerpTime);
-        base.Robot.transform.position = lerpPos;
     }
 
     public override void OnBehaviourTriggered()
     {
         base.OnBehaviourTriggered();
         _isBehaviourTriggered = true;
-        _startPosition = base.Robot.transform.position;
     }
 
     public override void Copy<T>(ref T copy)

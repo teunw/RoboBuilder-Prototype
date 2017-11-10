@@ -15,10 +15,13 @@
           </e>
         </e>
         <e p="Scripts" t="Include">
+          <e p="ButtonsTouch.cs" t="Include" />
           <e p="ConnectPoint.cs" t="Include" />
           <e p="ConnectPointManager.cs" t="Include" />
           <e p="GrabbableObjectMidair.cs" t="Include" />
           <e p="refactor" t="Include">
+            <e p="_ForLoop.cs" t="Include" />
+            <e p="_Loop.cs" t="Include" />
             <e p="_Move.cs" t="Include" />
             <e p="_Rotate.cs" t="Include" />
             <e p="_Scale.cs" t="Include" />
@@ -31,6 +34,9 @@
           <e p="RobotMovementBehaviour.cs" t="Include" />
           <e p="StartCube.cs" t="Include" />
           <e p="Utils.cs" t="Include" />
+        </e>
+        <e p="Skybox" t="Include">
+          <e p="readme.txt" t="Include" />
         </e>
         <e p="SteamVR" t="Include">
           <e p="Editor" t="Include">

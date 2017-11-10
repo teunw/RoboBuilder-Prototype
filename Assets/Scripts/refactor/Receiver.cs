@@ -171,7 +171,7 @@ public class Receiver : MonoBehaviour
                 (RobotBehaviourScript) gameObject.AddComponent(transmitter.BehaviourScript.GetType());
             transmitter.BehaviourScript.Copy(ref script);
             // todo : make it so this doesn;t have to happen
-            transmitter.enabled = true;
+            script.Enabled = true;
         }
         
     }

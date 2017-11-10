@@ -3,8 +3,7 @@ using UnityEngine;
 
 public abstract class RobotBehaviourScript : MonoBehaviour 
 {
-	public Robot Robot;
-	public bool enabled = true;
+	public bool Enabled = true;
 
 	public virtual void OnBehaviourTriggered() {}
 
