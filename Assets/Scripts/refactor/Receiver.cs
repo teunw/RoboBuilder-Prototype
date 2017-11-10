@@ -179,7 +179,7 @@ public class Receiver : MonoBehaviour
     {
         foreach (RobotBehaviourScript script in this.gameObject.GetComponents<RobotBehaviourScript>())
         {
-            script.enabled = !scriptsEnabled;
+            script.Enabled = !scriptsEnabled;
         }
         scriptsEnabled = !scriptsEnabled;
     }

@@ -11,8 +11,7 @@ using VRTK;
 
 public class MaterialToggle : MonoBehaviour
 {
-    [Header("Button touch actions")]
-    public Material ColorOn;
+    [Header("Button touch actions")] public Material ColorOn;
     public Material ColorOff;
     public GameObject[] Objects;
     public bool TurnedOn = false;
@@ -23,6 +22,28 @@ public class MaterialToggle : MonoBehaviour
         {
             obj.GetComponent<Renderer>().material = TurnedOn ? ColorOn : ColorOff;
         }
+    }
+    
+    public IEnumerator WaitTurnOnCoroutine(float waitTime)
+    {
+        yield return new WaitForSeconds(waitTime);
+        this.TurnOn();
+    }
+
+    public IEnumerator WaitTurnOffCoroutine(float waitTime)
+    {
+        yield return new WaitForSeconds(waitTime);
+        this.TurnOff();
+    }
+    
+    public void WaitTurnOn(float time)
+    {
+        StartCoroutine(WaitTurnOffCoroutine(time));
+    }
+
+    public void WaitTurnOff(float time)
+    {
+        StartCoroutine(WaitTurnOffCoroutine(time));
     }
 
     public void Toggle()
