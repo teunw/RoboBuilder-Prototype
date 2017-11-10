@@ -1,7 +1,9 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[Obsolete("pls stop")]
 public class RobotMovementBehaviour : RobotBehaviourScript
 {
     public Vector3 MoveLocation;
@@ -31,5 +33,11 @@ public class RobotMovementBehaviour : RobotBehaviourScript
         base.OnBehaviourTriggered();
         _isBehaviourTriggered = true;
         _startPosition = base.Robot.transform.position;
+    }
+
+    public override void Copy<T>(ref T copy)
+    {
+        // todo should not implement this {this class is deprecated}
+        throw new System.NotImplementedException();
     }
 }

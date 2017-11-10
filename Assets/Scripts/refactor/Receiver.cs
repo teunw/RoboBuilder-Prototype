@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Reflection;
 using UnityEngine;
@@ -51,9 +50,8 @@ public class Receiver : MonoBehaviour
             var fields = GetFields(script);
 //            foreach (var field in fields)
 //            {   
-//                SetField(field,script);
+//                SetField(field,script,new Vector3(1f, 1f, 1f));
 //            }
-            
         }
     }
 
@@ -87,7 +85,7 @@ public class Receiver : MonoBehaviour
     /// <param name="fieldInfo"></param>
     /// <param name="script"></param>
     /// <exception cref="NullReferenceException"></exception>
-    private void SetField(FieldInfo fieldInfo, RobotBehaviourScript script)
+    private void SetField(FieldInfo fieldInfo, RobotBehaviourScript script, object value)
     {
         if (fieldInfo == null)
         {
@@ -95,7 +93,7 @@ public class Receiver : MonoBehaviour
         }
         try
         {
-            fieldInfo.SetValue(script, new Vector3(1f, 1f, 1f));
+            fieldInfo.SetValue(script, value);
         }
         catch (Exception e)
         {
@@ -104,28 +102,76 @@ public class Receiver : MonoBehaviour
         }
     }
 
-
+    /// <summary>
+    /// Method that moves the currently executing script
+    /// </summary>
     private void NextScript()
     {
-        currentScript = (currentScript + 1) % gameObject.GetComponents<RobotBehaviourScript>().Length;
-        var scripts = gameObject.GetComponents<RobotBehaviourScript>();
+        // set the currentscript to the index of the start when a end of a loop is hit
+        currentScript = ifForLoop();
+        SetNext();
+    }
+
+    private int ifForLoop()
+    {
+        int currentAddOne = (currentScript + 1) % GetComponents<RobotBehaviourScript>().Length;
+        var script = GetComponents<RobotBehaviourScript>()[currentAddOne] as _Loop;
+        if (script == null) return currentScript;
+        if (!script.start && !script.EndOfLoop())
+        {
+            currentScript = GetIndexOfScript(script.other);
+            return ifForLoop();
+        }
+        currentScript = (currentScript + 1) % GetComponents<RobotBehaviourScript>().Length;
+        return ifForLoop();
+    }
+
+    private void SetNext()
+    {
+        RobotBehaviourScript[] scripts;
+        // if its not the end of a for loop
+        // go to the next script
+        currentScript = (currentScript + 1) % GetComponents<RobotBehaviourScript>().Length;
+        scripts = GetComponents<RobotBehaviourScript>();
         for (int i = 0; i < scripts.Length; i++)
         {
             scripts[i].enabled = i == currentScript;
         }
     }
 
+    /// <summary>
+    /// Helper method to get the index of the for loop start
+    /// </summary>
+    private int GetIndexOfScript(RobotBehaviourScript script)
+    {
+        for (int i = 0; i < GetComponents<RobotBehaviourScript>().Length; i++)
+        {
+            if (GetComponents<RobotBehaviourScript>()[i] == script)
+            {
+                return i;
+            }
+        }
+        throw new KeyNotFoundException();
+    }
 
     public void OnTriggerEnter(Collider other)
     {
+        Debug.Log("trigger called");
         var transmitter = other.GetComponent<Transmitter>();
         if (transmitter != null) // todo : don't add the same script double
         {
-            Type type = Type.GetType(transmitter.BehaviourScript);
-            gameObject.AddComponent(type);
+            RobotBehaviourScript script =
+                (RobotBehaviourScript) gameObject.AddComponent(transmitter.BehaviourScript.GetType());
+            transmitter.BehaviourScript.Copy(ref script);
+            // todo : make it so this doesn;t have to happen
+            transmitter.enabled = true;
         }
     }
 
+    /// <summary>
+    /// Pauzes all scripta
+    /// todo : make sure only the current script is played
+    /// </summary>
     public void PauzeScripts()
     {
         foreach (RobotBehaviourScript script in this.gameObject.GetComponents<RobotBehaviourScript>())
@@ -135,6 +181,9 @@ public class Receiver : MonoBehaviour
         scriptsEnabled = !scriptsEnabled;
     }
 
+    /// <summary>
+    /// Pauses all scripts and resets it
+    /// </summary>
     public void StopScripts()
     {
         if (scriptsEnabled)
@@ -144,6 +193,9 @@ public class Receiver : MonoBehaviour
         ResetScripts();
     }
 
+    /// <summary>
+    /// Resets the scripts to the starting position, rotation and scale
+    /// </summary>
     public void ResetScripts()
     {
         transform.position = startPos;
