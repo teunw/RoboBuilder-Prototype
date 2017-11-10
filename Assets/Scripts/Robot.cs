@@ -14,7 +14,6 @@ public class Robot : MonoBehaviour
 		if (robotBehaviour != null && !BehaviourScripts.Contains(robotBehaviour))
 		{
 			Debug.Log("Triggering behaviour");
-			robotBehaviour.Robot = gameObject.GetComponent<Robot>();
 			BehaviourScripts.Add(robotBehaviour);
 			BehaviourScripts.Last().OnBehaviourTriggered();
 		}

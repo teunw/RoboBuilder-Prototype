@@ -14,11 +14,14 @@ public class _Rotate : RobotBehaviourScript {
 	
 	public override void Copy<T>(ref T copyO)
 	{
+		base.Copy(ref copyO);
+		
 		var copy = copyO as _Rotate;
 		if (copy != null)
 		{
 			copy.Step = Step;
 			copy.enabled = enabled;
+			copy.Cube = Cube;
 		}
 		else
 		{
