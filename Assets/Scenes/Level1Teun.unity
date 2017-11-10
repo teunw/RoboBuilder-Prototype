@@ -3826,13 +3826,14 @@ MonoBehaviour:
   useOverrideButton: 0
   allowedUseControllers: 0
   usingState: 0
-  ColorOn: {fileID: 0}
-  ColorOff: {fileID: 0}
-  Method: 
+  ColorOn: {fileID: 2100000, guid: ffc3e96c66315174ea47d557cdc63a91, type: 2}
+  ColorOff: {fileID: 2100000, guid: 7f4db6f1a70bece41b71b7cfef44396a, type: 2}
   Objects:
   - {fileID: 767815040}
+  StayColorAfterTouch: 0
+  TurnedOn: 0
   OnButtonTouched:
-    OnTouched:
+    OnTurnOn:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 467919784}
@@ -3846,6 +3847,11 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    OnTurnOff:
+      m_PersistentCalls:
+        m_Calls: []
       m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
 --- !u!1 &771519930
@@ -7195,14 +7201,15 @@ MonoBehaviour:
   useOverrideButton: 0
   allowedUseControllers: 0
   usingState: 0
-  ColorOn: {fileID: 0}
-  ColorOff: {fileID: 0}
-  Method: 
+  ColorOn: {fileID: 2100000, guid: 6d195644825fd254fb86dd06ad3dba0b, type: 2}
+  ColorOff: {fileID: 2100000, guid: 7f4db6f1a70bece41b71b7cfef44396a, type: 2}
   Objects:
   - {fileID: 254127301}
   - {fileID: 1950269728}
+  StayColorAfterTouch: 1
+  TurnedOn: 0
   OnButtonTouched:
-    OnTouched:
+    OnTurnOn:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 467919784}
@@ -7216,6 +7223,11 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    OnTurnOff:
+      m_PersistentCalls:
+        m_Calls: []
       m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
 --- !u!65 &1424574521
@@ -7394,7 +7406,6 @@ GameObject:
   - component: {fileID: 1475728584}
   - component: {fileID: 1475728586}
   - component: {fileID: 1475728585}
-  - component: {fileID: 1475728587}
   m_Layer: 0
   m_Name: Reset
   m_TagString: Untagged
@@ -7459,14 +7470,15 @@ MonoBehaviour:
   useOverrideButton: 0
   allowedUseControllers: 0
   usingState: 0
-  ColorOn: {fileID: 0}
-  ColorOff: {fileID: 0}
-  Method: 
+  ColorOn: {fileID: 2100000, guid: 454ac22bfc1fd6c49a1ff77c4fda3e7b, type: 2}
+  ColorOff: {fileID: 2100000, guid: 7f4db6f1a70bece41b71b7cfef44396a, type: 2}
   Objects:
   - {fileID: 2110048885}
   - {fileID: 666606449}
+  StayColorAfterTouch: 0
+  TurnedOn: 0
   OnButtonTouched:
-    OnTouched:
+    OnTurnOn:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 467919784}
@@ -7482,17 +7494,11 @@ MonoBehaviour:
           m_CallState: 2
       m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
---- !u!114 &1475728587
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1475728583}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e68b656fa9fd59f4fac812ceb51a3222, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+    OnTurnOff:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
 --- !u!1 &1478665425
 GameObject:
   m_ObjectHideFlags: 0

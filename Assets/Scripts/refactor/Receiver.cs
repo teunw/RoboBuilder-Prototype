@@ -165,15 +165,10 @@ public class Receiver : MonoBehaviour
 
     public void AddScript(Transmitter transmitter)
     {
-        if (transmitter != null) // todo : don't add the same script double
-        {
-            RobotBehaviourScript script =
-                (RobotBehaviourScript) gameObject.AddComponent(transmitter.BehaviourScript.GetType());
-            transmitter.BehaviourScript.Copy(ref script);
-            // todo : make it so this doesn;t have to happen
-            script.Enabled = true;
-        }
-        
+        if (transmitter == null) return;
+        var script =
+            (RobotBehaviourScript) gameObject.AddComponent(transmitter.BehaviourScript.GetType());
+        transmitter.BehaviourScript.Copy(ref script);
     }
 
     /// <summary>
