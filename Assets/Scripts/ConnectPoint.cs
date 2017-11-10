@@ -8,7 +8,8 @@ using VRTK.Highlighters;
 
 public class ConnectPoint : GrabbableObjectMidair
 {
-    [Header("Connect Point parameters")] public TrailRenderer Trail;
+    [Header("Connect Point parameters")] 
+    public TrailRenderer Trail;
     public ConnectPointManager ConnectPointManager;
 
     private Transmitter _inCurrentTransmitter = null;
@@ -65,9 +66,11 @@ public class ConnectPoint : GrabbableObjectMidair
         if (_inCurrentTransmitter.HasComponent<VRTK_BaseHighlighter>())
         {
             _inCurrentTransmitter.GetComponent<VRTK_BaseHighlighter>().Unhighlight();
-            this.ConnectPointManager.StartCube.Transmitters.Add(_inCurrentTransmitter);
-            Debug.Log("Added " + _inCurrentTransmitter.BehaviourScript);
-        }
+        }        
+        this.ConnectPointManager.StartCube.Transmitters.Add(_inCurrentTransmitter);
+        this.ConnectPointManager.Receiver.AddScript(this._inCurrentTransmitter);
+        ResetLineAndPoint();
+        Debug.Log("Added " + _inCurrentTransmitter.BehaviourScript);
     }
 
     public virtual void OnTriggerEnter(Collider other)

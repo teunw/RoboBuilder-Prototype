@@ -7,7 +7,7 @@ public class _Move : RobotBehaviourScript {
 	public Vector3 Step = new Vector3(0,0,.1f);
 	
 	void Update () {
-		if (enabled)
+		if (Enabled)
 		{
 			this.transform.position = this.transform.position + Step * Time.deltaTime;
 		}
@@ -25,7 +25,7 @@ public class _Move : RobotBehaviourScript {
 		if (copy != null)
 		{
 			((_Move)copy).Step = Step;
-			((_Move)copy).enabled = enabled;
+			((_Move)copy).Enabled = Enabled;
 		}
 		else
 		{

@@ -7,7 +7,7 @@ public abstract class RobotBehaviourScript : MonoBehaviour
 	public GameObject Cube;
 	
 	[ShowInRobot]
-	public bool enabled = true;
+	public bool Enabled = true;
 
 	private void Start()
 	{
