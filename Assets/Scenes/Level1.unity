@@ -38,8 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.11083142, g: 0.36980858, b: 0.74241686, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -2321,7 +2320,7 @@ GameObject:
   - component: {fileID: 467919784}
   m_Layer: 0
   m_Name: Robot
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3504,6 +3503,7 @@ GameObject:
   - component: {fileID: 767815042}
   - component: {fileID: 767815044}
   - component: {fileID: 767815045}
+  - component: {fileID: 767815046}
   m_Layer: 0
   m_Name: Stop
   m_TagString: Untagged
@@ -3574,7 +3574,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 767815040}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.500335, y: 0.97595984, z: 0.48621005}
@@ -3613,6 +3613,18 @@ MonoBehaviour:
   colorOff: {fileID: 2100000, guid: 7f4db6f1a70bece41b71b7cfef44396a, type: 2}
   Objects:
   - {fileID: 767815040}
+--- !u!114 &767815046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 767815040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e68b656fa9fd59f4fac812ceb51a3222, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  method: StopScripts
 --- !u!1 &771519930
 GameObject:
   m_ObjectHideFlags: 0
@@ -6914,6 +6926,7 @@ GameObject:
   - component: {fileID: 1424574519}
   - component: {fileID: 1424574520}
   - component: {fileID: 1424574521}
+  - component: {fileID: 1424574522}
   m_Layer: 0
   m_Name: Pause
   m_TagString: Untagged
@@ -6978,11 +6991,23 @@ BoxCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1424574518}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.60146296, y: 0.49787673, z: 0.92073554}
   m_Center: {x: 0.102613516, y: 0.24263512, z: 0.36572623}
+--- !u!114 &1424574522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1424574518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e68b656fa9fd59f4fac812ceb51a3222, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  method: PauzeScripts
 --- !u!1 &1448523953
 GameObject:
   m_ObjectHideFlags: 0
@@ -7147,6 +7172,7 @@ GameObject:
   - component: {fileID: 1475728584}
   - component: {fileID: 1475728586}
   - component: {fileID: 1475728585}
+  - component: {fileID: 1475728587}
   m_Layer: 0
   m_Name: Reset
   m_TagString: Untagged
@@ -7176,7 +7202,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1475728583}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.55856264, y: 0.5220045, z: 0.9449568}
@@ -7216,6 +7242,18 @@ MonoBehaviour:
   Objects:
   - {fileID: 2110048885}
   - {fileID: 666606449}
+--- !u!114 &1475728587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1475728583}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e68b656fa9fd59f4fac812ceb51a3222, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  method: ResetScripts
 --- !u!1 &1478665425
 GameObject:
   m_ObjectHideFlags: 0
@@ -8447,12 +8485,12 @@ Prefab:
     - target: {fileID: 224000013127654674, guid: d46cf6b1ad9d84a48ae7548a2a6b41b3,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: 569
+      value: 681
       objectReference: {fileID: 0}
     - target: {fileID: 224000013127654674, guid: d46cf6b1ad9d84a48ae7548a2a6b41b3,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 199
+      value: 259.5
       objectReference: {fileID: 0}
     - target: {fileID: 224000013127654674, guid: d46cf6b1ad9d84a48ae7548a2a6b41b3,
         type: 2}
@@ -8852,13 +8890,12 @@ Prefab:
     - target: {fileID: 224000012623161658, guid: d46cf6b1ad9d84a48ae7548a2a6b41b3,
         type: 2}
       propertyPath: m_LocalPosition.x
-
-      value: 488
+      value: 600
       objectReference: {fileID: 0}
     - target: {fileID: 224000012623161658, guid: d46cf6b1ad9d84a48ae7548a2a6b41b3,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 192.5
+      value: -259.5
       objectReference: {fileID: 0}
     - target: {fileID: 224000012484682510, guid: d46cf6b1ad9d84a48ae7548a2a6b41b3,
         type: 2}
