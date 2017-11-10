@@ -6,7 +6,7 @@ using VRTK;
 [RequireComponent(typeof(Rigidbody))]
 public class GrabbableObjectMidair : VRTK_InteractableObject
 {
-	private Rigidbody midAirRigidbody;
+	private Rigidbody _midAirRigidbody;
 
 	[Header("Grab/Ungrab parameters", order = 0)]
 	public bool UseGravityOnGrab = true;
@@ -18,19 +18,20 @@ public class GrabbableObjectMidair : VRTK_InteractableObject
 	// Use this for initialization
 	public virtual void Start ()
 	{
-		midAirRigidbody = GetComponent<Rigidbody>();
+		_midAirRigidbody = GetComponent<Rigidbody>();
+		SetStill();
 	}
 
 	public virtual void SetMoving()
 	{
-		midAirRigidbody.useGravity = UseGravityOnGrab;
-		midAirRigidbody.isKinematic = IsKinematicOnGrab;
+		_midAirRigidbody.useGravity = UseGravityOnGrab;
+		_midAirRigidbody.isKinematic = IsKinematicOnGrab;
 	}
 
 	public virtual void SetStill()
 	{
-		midAirRigidbody.useGravity = UseGravityOnUngrab;
-		midAirRigidbody.useGravity = IsKinematicOnUngrab;
+		_midAirRigidbody.useGravity = UseGravityOnUngrab;
+		_midAirRigidbody.useGravity = IsKinematicOnUngrab;
 	}
 
 	public override void OnInteractableObjectGrabbed(InteractableObjectEventArgs e)

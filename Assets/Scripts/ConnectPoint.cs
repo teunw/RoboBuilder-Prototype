@@ -24,7 +24,7 @@ public class ConnectPoint : GrabbableObjectMidair
     public virtual void DisableAllPointsExceptThis()
     {
         Trail.gameObject.SetActive(true);
-        ConnectPointManager.DisableExcept(this.gameObject);
+        ConnectPointManager.DisableExcept(this);
     }
 
     public virtual IEnumerator ResetTrailAfterTime(float time)

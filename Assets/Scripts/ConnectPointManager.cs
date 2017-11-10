@@ -6,10 +6,10 @@ using Valve.VR.InteractionSystem;
 
 public class ConnectPointManager : MonoBehaviour
 {
-	public GameObject[] ConnectPoints;
+	public ConnectPoint[] ConnectPoints;
 	public StartCube StartCube;
 
-	public void DisableExcept(GameObject connectPoint)
+	public void DisableExcept(ConnectPoint connectPoint)
 	{
 		ConnectPoints
 			.Where(c => c != connectPoint)
