@@ -53,6 +53,10 @@ public class Receiver : MonoBehaviour
 //                SetField(field,script,new Vector3(1f, 1f, 1f));
 //            }
         }
+        if (Input.GetKeyDown(KeyCode.Alpha6))
+        {
+            Undo();
+        }
     }
 
     /// <summary>
@@ -166,10 +170,33 @@ public class Receiver : MonoBehaviour
     public void AddScript(Transmitter transmitter)
     {
         if (transmitter == null) return;
-        var script =
-            (RobotBehaviourScript) gameObject.AddComponent(transmitter.BehaviourScript.GetType());
+        var script =(RobotBehaviourScript) gameObject.AddComponent(transmitter.BehaviourScript.GetType());
         transmitter.BehaviourScript.Copy(ref script);
     }
+
+    /// <summary>
+    /// Removes the script from the line and returns the next cube that is in line
+    /// </summary>
+    /// <param name="transmitter"></param>
+    /// <returns>the next gameobject in the list</returns>
+    public GameObject RemoveScript(Transmitter transmitter)
+    {
+        var scripts = GetComponents<RobotBehaviourScript>();
+        for (int i = 0; i < scripts.Length; i++)
+        {
+            if (scripts[i].Cube == transmitter.gameObject)
+            {
+                Destroy(scripts[i]);
+                if (GetComponents<RobotBehaviourScript>().Length <0)
+                {
+                    return GetComponents<RobotBehaviourScript>()[i].Cube;
+                }
+            }
+        }
+        Debug.Log("Could not find any scripts !");
+        return null;
+    }
+
 
     /// <summary>
     /// Pauzes all scripta
@@ -205,4 +232,26 @@ public class Receiver : MonoBehaviour
         transform.rotation = startRot;
         transform.localScale = startScale;
     }
+
+    /// <summary>
+    /// Clears all the scripts off 
+    /// </summary>
+    public void ClearScripts()
+    {
+        foreach (var robotBehaviourScript in gameObject.GetComponents<RobotBehaviourScript>())
+        {
+            Destroy(robotBehaviourScript);
+        }
+    }
+
+    /// <summary>
+    /// Goes back to the previous script
+    /// </summary>
+    public void Undo()
+    {
+        // minus 2 because set next adds one
+        currentScript = this.GetComponents<RobotBehaviourScript>().Length - Math.Abs(currentScript - 2 % this.GetComponents<RobotBehaviourScript>().Length);
+        SetNext();
+    }
+
 }
