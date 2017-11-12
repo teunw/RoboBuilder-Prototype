@@ -1,16 +1,25 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Reflection;
+using System.Security.Policy;
 using UnityEngine;
 
 public class Receiver : MonoBehaviour
 {
+    /// <summary>
+    /// Variables that keep track of the starting state
+    /// </summary>
     private Vector3 startPos;
     private Quaternion startRot;
     private Vector3 startScale;
 
     public bool scriptsEnabled = true;
-    public int currentScript = 0;
+    
+    /// <summary>
+    /// Used as the index of the current script
+    /// Example : GetComponents<RobotBehaviourScript>()[currentScript]
+    /// </summary>
+    public int currentScript;
 
     void Start()
     {
@@ -116,11 +125,15 @@ public class Receiver : MonoBehaviour
             return;
         }
         // set the currentscript to the index of the start when a end of a loop is hit
-        currentScript = ifForLoop();
-        SetNext();
+        currentScript = ForloopLogic();
+        SetCurrentActive();
     }
-
-    private int ifForLoop()
+    
+    /// <summary>
+    /// Makes sure so the current script is never the current one
+    /// </summary>
+    /// <returns></returns>
+    private int ForloopLogic()
     {
         int currentAddOne = (currentScript + 1) % GetComponents<RobotBehaviourScript>().Length;
         var script = GetComponents<RobotBehaviourScript>()[currentAddOne] as _Loop;
@@ -128,20 +141,22 @@ public class Receiver : MonoBehaviour
         if (!script.start && !script.EndOfLoop())
         {
             currentScript = GetIndexOfScript(script.other);
-            return ifForLoop();
+            return ForloopLogic();
         }
         currentScript = (currentScript + 1) % GetComponents<RobotBehaviourScript>().Length;
-        return ifForLoop();
+        return ForloopLogic();
     }
-
-    private void SetNext()
+    /// <summary>
+    /// Goes to the next script and set the corresponding scipts to Enabled and disabled
+    /// </summary>
+    private void SetCurrentActive()
     {
         RobotBehaviourScript[] scripts;
         currentScript = (currentScript + 1) % GetComponents<RobotBehaviourScript>().Length;
         scripts = GetComponents<RobotBehaviourScript>();
         for (int i = 0; i < scripts.Length; i++)
         {
-            scripts[i].enabled = i == currentScript;
+            scripts[i].Enabled = i == currentScript;
         }
     }
 
@@ -160,17 +175,26 @@ public class Receiver : MonoBehaviour
         throw new KeyNotFoundException();
     }
 
+    /// <summary>
+    /// When the t
+    /// </summary>
+    /// <param name="other"></param>
     public void OnTriggerEnter(Collider other)
     {
         Debug.Log("trigger called");
-        var transmitter = other.GetComponent<Transmitter>();
-        AddScript(transmitter);
+        if (other.GetComponent<Transmitter>() != null)
+        {
+            AddScript(other.GetComponent<Transmitter>());
+        }
     }
-
+    /// <summary>
+    /// Add a script from a transmitter
+    /// </summary>
+    /// <param name="transmitter"></param>
     public void AddScript(Transmitter transmitter)
     {
         if (transmitter == null) return;
-        var script =(RobotBehaviourScript) gameObject.AddComponent(transmitter.BehaviourScript.GetType());
+        var script = (RobotBehaviourScript) gameObject.AddComponent(transmitter.BehaviourScript.GetType());
         transmitter.BehaviourScript.Copy(ref script);
     }
 
@@ -187,7 +211,7 @@ public class Receiver : MonoBehaviour
             if (scripts[i].Cube == transmitter.gameObject)
             {
                 Destroy(scripts[i]);
-                if (GetComponents<RobotBehaviourScript>().Length <0)
+                if (GetComponents<RobotBehaviourScript>().Length < 0)
                 {
                     return GetComponents<RobotBehaviourScript>()[i].Cube;
                 }
@@ -206,7 +230,7 @@ public class Receiver : MonoBehaviour
     {
         foreach (RobotBehaviourScript script in this.gameObject.GetComponents<RobotBehaviourScript>())
         {
-            script.enabled = !scriptsEnabled;
+            script.Enabled = !scriptsEnabled;
         }
         scriptsEnabled = !scriptsEnabled;
     }
@@ -250,8 +274,13 @@ public class Receiver : MonoBehaviour
     public void Undo()
     {
         // minus 2 because set next adds one
-        currentScript = this.GetComponents<RobotBehaviourScript>().Length - Math.Abs(currentScript - 2 % this.GetComponents<RobotBehaviourScript>().Length);
-        SetNext();
+        currentScript = this.GetComponents<RobotBehaviourScript>().Length -
+                        Math.Abs(currentScript - 2 % this.GetComponents<RobotBehaviourScript>().Length);
+        SetCurrentActive();
     }
 
+    public void ScriptDone()
+    {
+        NextScript();
+    }
 }

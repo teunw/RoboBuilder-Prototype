@@ -5,17 +5,30 @@ public class _Move : RobotBehaviourScript {
 
 	[ShowInRobot]
 	public Vector3 Step = new Vector3(0,0,.1f);
-	
+
+	[ShowInRobot]
+	public Vector3 Total = new Vector3(0,0,1f);
+
+	public Vector3 Current = new Vector3(0,0,0);
+
 	void Update () {
 		if (Enabled)
 		{
-			this.transform.position = this.transform.position + Step * Time.deltaTime;
+			transform.position = transform.position + Step * Time.deltaTime;
+			
+			//todo : make sure this works for all directions
+			Current += Step * Time.deltaTime;
+			if (Current.x >= Total.x && Current.y >=Total.y && Current.z >=Total.z)
+			{
+				Current = new Vector3();
+				Done();
+			}
 		}
 	}
 
 	public override string ToString()
 	{
-		return this.name;
+		return name;
 	}
 
 	public override void Copy<T>(ref T copyO)
@@ -24,8 +37,8 @@ public class _Move : RobotBehaviourScript {
 		var copy = copyO as _Move;
 		if (copy != null)
 		{
-			((_Move)copy).Step = Step;
-			((_Move)copy).Enabled = Enabled;
+			copy.Step = Step;
+			copy.Enabled = Enabled;
 		}
 		else
 		{
