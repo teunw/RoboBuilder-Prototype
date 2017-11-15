@@ -1,19 +1,21 @@
 ﻿using System;
 using System.Collections;
-using System.Collections.Generic;
 using DefaultNamespace;
 using UnityEngine;
 using VRTK;
-using VRTK.Highlighters;
 
 public class ConnectPoint : GrabbableObjectMidair
 {
-    [Header("Connect Point parameters")] 
-    public TrailRenderer Trail;
-    public ConnectPointManager ConnectPointManager;
+    [Header("Connect Point parameters")] public TrailRenderer Trail;
+
+    public StartCube StartCube;
+    public Receiver Receiver;
+    public Transform LineParent;
+    public GameObject LinePrefab;
 
     private Transmitter _inCurrentTransmitter = null;
     private float TrailTime;
+    private GameObject LastGameObject;
 
     public override void Start()
     {
@@ -22,10 +24,20 @@ public class ConnectPoint : GrabbableObjectMidair
         this.Trail.gameObject.SetActive(false);
     }
 
-    public virtual void DisableAllPointsExceptThis()
+    public GameObject GetLastGameObject()
+    {
+        return LastGameObject ?? this.StartCube.gameObject;
+    }
+
+    public void NullifyInCurrentTransmitter()
+    {
+        this.LastGameObject = this._inCurrentTransmitter.gameObject;
+        this._inCurrentTransmitter = null;
+    }
+
+    public virtual void EnableTrail()
     {
         Trail.gameObject.SetActive(true);
-        ConnectPointManager.DisableExcept(this);
     }
 
     public virtual IEnumerator ResetTrailAfterTime(float time)
@@ -43,13 +55,14 @@ public class ConnectPoint : GrabbableObjectMidair
     {
         this.transform.localPosition = new Vector3(0f, 0f, 0f);
         this.Trail.time = 0f;
+        this.Trail.gameObject.SetActive(false);
         StartCoroutine(ResetTrailAfterTime(.5f));
     }
 
     public override void OnInteractableObjectGrabbed(InteractableObjectEventArgs e)
     {
         base.OnInteractableObjectGrabbed(e);
-        this.DisableAllPointsExceptThis();
+        this.EnableTrail();
     }
 
     public override void OnInteractableObjectUngrabbed(InteractableObjectEventArgs e)
@@ -63,14 +76,12 @@ public class ConnectPoint : GrabbableObjectMidair
             return;
         }
 
-        if (_inCurrentTransmitter.HasComponent<VRTK_BaseHighlighter>())
-        {
-//            _inCurrentTransmitter.GetComponent<VRTK_BaseHighlighter>().Unhighlight();
-        }        
-        this.ConnectPointManager.StartCube.Transmitters.Add(_inCurrentTransmitter);
-        this.ConnectPointManager.Receiver.AddScript(this._inCurrentTransmitter);
+        this.StartCube.Transmitters.Add(_inCurrentTransmitter);
+        this.Receiver.AddScript(this._inCurrentTransmitter);
         ResetLineAndPoint();
+        MoveToNextObject();
         Debug.Log("Added " + _inCurrentTransmitter.BehaviourScript);
+        NullifyInCurrentTransmitter();
     }
 
     public virtual void OnTriggerEnter(Collider other)
@@ -79,11 +90,6 @@ public class ConnectPoint : GrabbableObjectMidair
 
         this._inCurrentTransmitter = other.gameObject.GetComponent<Transmitter>();
         Debug.Log("Behaviour set");
-        if (_inCurrentTransmitter.HasComponent<VRTK_BaseHighlighter>())
-        {
-//            _inCurrentTransmitter.GetComponent<VRTK_BaseHighlighter>().Highlight();
-            Debug.Log("Highlighting");
-        }
     }
 
     public virtual void OnCollisionExit(Collision other)
@@ -91,5 +97,27 @@ public class ConnectPoint : GrabbableObjectMidair
         if (_inCurrentTransmitter == null || other.gameObject != _inCurrentTransmitter.gameObject) return;
         _inCurrentTransmitter = null;
         Debug.Log("Behaviour left");
-    }    
+    }
+
+    public void SpawnLineBetween(Transform gm, Transform gm2)
+    {
+        var newGm = Instantiate(this.LinePrefab, this.LineParent);
+        if (!newGm.HasComponent<LineRenderer>() || !newGm.HasComponent<LineRendererFollowTargets>())
+        {
+            throw new Exception("Prefab has to contain a linerenderer and linerendererfollowtargets component");
+        }
+        var lineRenderer = newGm.GetComponent<LineRenderer>();
+        lineRenderer.SetPositions(new[] {gm.transform.position, gm2.transform.position});
+
+        var lineRendererFollower = newGm.GetComponent<LineRendererFollowTargets>();
+        lineRendererFollower.GameObjects = new[] {gm, gm2};
+    }
+
+    public void MoveToNextObject()
+    {
+        this.gameObject.transform.parent.transform.parent = _inCurrentTransmitter.gameObject.transform;
+        this.gameObject.transform.localPosition = new Vector3(-0.45f, 0f, 0f);
+        this.SpawnLineBetween(this.GetLastGameObject().transform, this._inCurrentTransmitter.transform);
+        this.ResetLineAndPoint();
+    }
 }
