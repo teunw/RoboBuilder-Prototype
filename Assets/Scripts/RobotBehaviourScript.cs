@@ -12,7 +12,11 @@ public abstract class RobotBehaviourScript : MonoBehaviour
     public Receiver Receiver;
 
     void Start()
-//	private void Start()
+    {
+        Init();
+    }
+
+    protected void Init()
     {
         Cube = gameObject;
         foreach (var script in GetComponents<RobotBehaviourScript>())

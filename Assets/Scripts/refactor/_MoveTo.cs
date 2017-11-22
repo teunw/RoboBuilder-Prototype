@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using UnityEngine;
 using Valve.VR.InteractionSystem;
 using VRTK;
@@ -14,6 +15,7 @@ public class _MoveTo : RobotBehaviourScript
     // Use this for initialization
     void Start()
     {
+        Init();
         if (Target == null)
         {
             throw new NullReferenceException("Could not find a target");
