@@ -21,6 +21,7 @@
           <e p="LineRendererFollowTargets.cs" t="Include" />
           <e p="MaterialToggle.cs" t="Include" />
           <e p="MenuButtonHighlighter.cs" t="Include" />
+          <e p="MenuGrabbable.cs" t="Include" />
           <e p="refactor" t="Include">
             <e p="_ForLoop.cs" t="Include" />
             <e p="_Loop.cs" t="Include" />
