@@ -44,6 +44,7 @@ public class ConnectPoint : GrabbableObjectMidair
     {
         yield return new WaitForSeconds(time);
         ResetTrailTime();
+        this.Trail.gameObject.SetActive(false);
     }
 
     public virtual void ResetTrailTime()
@@ -55,7 +56,6 @@ public class ConnectPoint : GrabbableObjectMidair
     {
         this.transform.localPosition = new Vector3(0f, 0f, 0f);
         this.Trail.time = 0f;
-        this.Trail.gameObject.SetActive(false);
         StartCoroutine(ResetTrailAfterTime(.5f));
     }
 
@@ -116,7 +116,7 @@ public class ConnectPoint : GrabbableObjectMidair
     public void MoveToNextObject()
     {
         this.gameObject.transform.parent.transform.parent = _inCurrentTransmitter.gameObject.transform;
-        this.gameObject.transform.localPosition = new Vector3(-0.45f, 0f, 0f);
+        this.gameObject.transform.parent.transform.localPosition = new Vector3(-0.9f, 0f, 0f);
         this.SpawnLineBetween(this.GetLastGameObject().transform, this._inCurrentTransmitter.transform);
         this.ResetLineAndPoint();
     }
