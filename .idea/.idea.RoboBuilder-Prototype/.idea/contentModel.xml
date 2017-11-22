@@ -16,6 +16,7 @@
         </e>
         <e p="Scripts" t="Include">
           <e p="ConnectPoint.cs" t="Include" />
+          <e p="ControllerToggleMenu.cs" t="Include" />
           <e p="GrabbableObjectMidair.cs" t="Include" />
           <e p="LineRendererFollowTargets.cs" t="Include" />
           <e p="MaterialToggle.cs" t="Include" />

@@ -9,6 +9,7 @@ public class MenuButtonHighlighter : VRTK_InteractableObject
 {
     public GameObject PrefabToSpawn;
     public Transform NewParent;
+    public float NewScale = 1f;
     
     private VRTK_OutlineObjectCopyHighlighter _highlighter;
     private bool _isHighlighted = false;
@@ -40,6 +41,7 @@ public class MenuButtonHighlighter : VRTK_InteractableObject
         var inst = Instantiate(this.PrefabToSpawn);
         inst.transform.parent = this.NewParent;
         inst.transform.position = this.usingObject.gameObject.transform.position;
+        inst.transform.localScale = new Vector3(NewScale, NewScale, NewScale);
         this.usingObject.interactGrab.AttemptGrab();
         Destroy(inst.GetComponent<MenuButtonHighlighter>());
     }
