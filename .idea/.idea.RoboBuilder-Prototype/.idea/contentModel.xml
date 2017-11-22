@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\Teun Temp\.Rider2017.2\system\resharper-host\local\Transient\ReSharperHost\v10\SolutionCaches\_RoboBuilder-Prototype.-1341918469.00" t="ExcludeRecursive" />
-    <e p="C:\Users\Teun Temp\Documents\RoboBuilder-Prototype" t="IncludeRecursive">
+    <e p="C:\Users\TeunTemp\.Rider2017.2\system\resharper-host\local\Transient\ReSharperHost\v10\SolutionCaches\_RoboBuilder-Prototype.1684031547.00" t="ExcludeRecursive" />
+    <e p="C:\Users\TeunTemp\Documents\RoboBuilder-Prototype" t="IncludeRecursive">
       <e p="Assembly-CSharp-Editor-firstpass.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
@@ -19,10 +19,12 @@
           <e p="GrabbableObjectMidair.cs" t="Include" />
           <e p="LineRendererFollowTargets.cs" t="Include" />
           <e p="MaterialToggle.cs" t="Include" />
+          <e p="MenuButtonHighlighter.cs" t="Include" />
           <e p="refactor" t="Include">
             <e p="_ForLoop.cs" t="Include" />
             <e p="_Loop.cs" t="Include" />
             <e p="_Move.cs" t="Include" />
+            <e p="_MoveTo.cs" t="Include" />
             <e p="_Rotate.cs" t="Include" />
             <e p="_Scale.cs" t="Include" />
             <e p="Button" t="Include">
