@@ -16,7 +16,6 @@ public class _Rotate : RobotBehaviourScript {
 		{
 			transform.eulerAngles = transform.eulerAngles + Step * Time.deltaTime;
 
-
 			//todo : make sure this works for all directions
 			Current += Step * Time.deltaTime;
 			if (Current.x >= Total.x && Current.y >=Total.y && Current.z >=Total.z)
