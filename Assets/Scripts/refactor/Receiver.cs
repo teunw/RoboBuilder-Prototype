@@ -55,8 +55,8 @@ public class Receiver : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Alpha5))
         {
-            RobotBehaviourScript script = gameObject.GetComponents<RobotBehaviourScript>()[currentScript];
-            var fields = GetFields(script);
+//            RobotBehaviourScript script = gameObject.GetComponents<RobotBehaviourScript>()[currentScript];
+//            var fields = GetFields(script);
 //            foreach (var field in fields)
 //            {   
 //                SetField(field,script,new Vector3(1f, 1f, 1f));
@@ -68,52 +68,7 @@ public class Receiver : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// Gets all fields on the script that have the attribute ShowInRobot
-    /// </summary>
-    /// <param name="script"></param>
-    /// <returns></returns>
-    private List<FieldInfo> GetFields(RobotBehaviourScript script)
-    {
-        FieldInfo[] allFields = script.GetType().GetFields();
-        List<FieldInfo> fields = new List<FieldInfo>();
-        foreach (var field in allFields)
-        {
-            object[] a = field.GetCustomAttributes(true);
-            foreach (var attrib in a)
-            {
-                if (attrib.GetType().Name == typeof(ShowInRobot).Name)
-                {
-                    fields.Add(field);
-                }
-            }
-        }
-        return fields;
-    }
-
-    /// <summary>
-    /// Sets the value to vector.one this is for now only for testing purposes.
-    /// TODO : set it so it accepts all kind of objects
-    /// </summary>
-    /// <param name="fieldInfo"></param>
-    /// <param name="script"></param>
-    /// <exception cref="NullReferenceException"></exception>
-    private void SetField(FieldInfo fieldInfo, RobotBehaviourScript script, object value)
-    {
-        if (fieldInfo == null)
-        {
-            throw new NullReferenceException("fieldInfo null");
-        }
-        try
-        {
-            fieldInfo.SetValue(script, value);
-        }
-        catch (Exception e)
-        {
-            Console.WriteLine(e);
-            throw;
-        }
-    }
+  
 
     /// <summary>
     /// Method that moves the currently executing script

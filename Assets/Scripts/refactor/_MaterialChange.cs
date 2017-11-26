@@ -1,13 +1,15 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class _MaterialChange : RobotBehaviourScript
 {
 	public Material Material;
 	
-	void Update () {
-		GetComponent<Renderer>().material = Material;
-		Done();
+	void Update () 
+	{
+		if (Enabled)
+		{
+			GetComponent<Renderer>().material = Material;
+			Done();
+		}
 	}
 }

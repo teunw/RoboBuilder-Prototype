@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Reflection;
 using UnityEngine;
 
 public class _Move : RobotBehaviourScript {
@@ -12,6 +13,14 @@ public class _Move : RobotBehaviourScript {
 	public Vector3 Current = new Vector3(0,0,0);
 
 	void Update () {
+		if (Input.GetKeyDown(KeyCode.Alpha8))
+		{
+			foreach (FieldInfo field in GetFields())
+			{
+				Debug.Log(field.Name);
+			}
+		}
+		
 		if (Enabled)
 		{
 			transform.position = transform.position + Step * Time.deltaTime;
