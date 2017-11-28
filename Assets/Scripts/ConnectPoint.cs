@@ -75,6 +75,12 @@ public class ConnectPoint : GrabbableObjectMidair
             ResetLineAndPoint();
             return;
         }
+        if (!this._inCurrentTransmitter.BehaviourScript.IsConnectable)
+        {
+            Debug.Log("Transmitter not connectable");
+            ResetLineAndPoint();
+            return;
+        }
 
         this.StartCube.Transmitters.Add(_inCurrentTransmitter);
         this.Receiver.AddScript(this._inCurrentTransmitter);
@@ -116,7 +122,8 @@ public class ConnectPoint : GrabbableObjectMidair
     public void MoveToNextObject()
     {
         this.gameObject.transform.parent.transform.parent = _inCurrentTransmitter.gameObject.transform;
-        this.gameObject.transform.parent.transform.localPosition = new Vector3(-0.9f, 0f, 0f);
+        this.gameObject.transform.parent.transform.localPosition = new Vector3(-1.5f, 0f, 0f);
+        this.gameObject.transform.parent.transform.localScale = new Vector3(.8f, .8f, .8f);
         this.SpawnLineBetween(this.GetLastGameObject().transform, this._inCurrentTransmitter.transform);
         this.ResetLineAndPoint();
     }
