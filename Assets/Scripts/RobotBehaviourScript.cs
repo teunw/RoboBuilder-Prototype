@@ -13,6 +13,8 @@ public abstract class RobotBehaviourScript : MonoBehaviour
 
     public Receiver Receiver;
 
+    public Transform slider;
+
     void Start()
     {
         Init();
@@ -54,8 +56,16 @@ public abstract class RobotBehaviourScript : MonoBehaviour
     /// </summary>
     /// <param name="script"></param>
     /// <returns></returns>
-    protected List<FieldInfo> GetFields()
+    public List<FieldInfo> GetFields()
     {
+        if (slider != null)
+        {
+
+            var slider2 = Instantiate(slider);
+            slider2.transform.SetParent(transform);
+            slider2.transform.localScale = new Vector3(.2f, .2f, .2f);
+        }
+
         FieldInfo[] allFields = GetType().GetFields();
         List<FieldInfo> fields = new List<FieldInfo>();
         foreach (var field in allFields)
@@ -80,7 +90,7 @@ public abstract class RobotBehaviourScript : MonoBehaviour
     /// <param name="script"></param>
     /// <param name="value"></param>
     /// <exception cref="NullReferenceException"></exception>
-    protected void SetField(FieldInfo fieldInfo, RobotBehaviourScript script, object value)
+    public void SetField(FieldInfo fieldInfo, RobotBehaviourScript script, object value)
     {
         if (fieldInfo == null)
         {
@@ -96,7 +106,6 @@ public abstract class RobotBehaviourScript : MonoBehaviour
             throw;
         }
     }
-    
 }
 
 /// <summary>
