@@ -7,7 +7,7 @@ using VRTK;
 public class ControllerToggleMenu : MonoBehaviour
 {
 	public VRTK_ControllerEvents _controllerEvents { get; private set; }
-	public GameObject Menu;
+	public PalletteManager PalletteManager;
 
 	private bool _menuCurrentlyActive = true;
 
@@ -15,7 +15,7 @@ public class ControllerToggleMenu : MonoBehaviour
 	{
 		this._controllerEvents = GetComponent<VRTK_ControllerEvents>();
 		this._controllerEvents.ButtonOnePressed += this.OnButtonOnePressed;
-		this._menuCurrentlyActive = this.Menu.activeSelf;
+		this._menuCurrentlyActive = this.PalletteManager.PalletteActive;
 	}
 
 	private void OnButtonOnePressed(object sender, ControllerInteractionEventArgs e)
@@ -26,6 +26,6 @@ public class ControllerToggleMenu : MonoBehaviour
 	public void ToggleMenu()
 	{
 		this._menuCurrentlyActive = !this._menuCurrentlyActive;
-		Menu.SetActive(this._menuCurrentlyActive);
+		PalletteManager.SetPalletteActive(this._menuCurrentlyActive);
 	}
 }
