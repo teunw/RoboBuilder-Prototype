@@ -9,7 +9,10 @@ public abstract class RobotBehaviourScript : MonoBehaviour
 {
     [HideInInspector] public GameObject Cube;
 
-    [ShowInRobot] public bool Enabled = true;
+    [ShowInRobot] 
+    public bool Enabled = true;
+
+    public bool IsConnectable = true;
 
     public Receiver Receiver;
 

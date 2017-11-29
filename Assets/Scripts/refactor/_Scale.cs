@@ -13,17 +13,15 @@ public class _Scale : RobotBehaviourScript
 
     void Update()
     {
-        if (Enabled)
-        {
-            transform.localScale = transform.localScale + Step * Time.deltaTime;
+        if (!Enabled) return;
+        transform.localScale = transform.localScale + Step * Time.deltaTime;
 
-            //todo : make sure this works for all directions
-            Current += Step * Time.deltaTime;
-            if (Current.x >= Total.x && Current.y >= Total.y && Current.z >= Total.z)
-            {
-                Current = new Vector3();
-                Done();
-            }
+        //todo : make sure this works for all directions
+        Current += Step * Time.deltaTime;
+        if (Current.x >= Total.x && Current.y >= Total.y && Current.z >= Total.z)
+        {
+            Current = new Vector3();
+            Done();
         }
     }
 

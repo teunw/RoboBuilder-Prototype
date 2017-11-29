@@ -8,7 +8,7 @@ public class MenuGrabbable : VRTK_InteractableObject
 {
 	[Header("Menu grabbable options", order = -1)]
 	public Transform NewParent;
-	public float NewScale = 1f;
+	public Vector3 NewScale = new Vector3(1f, 1f, 1f);
 
 	private GameObject cloneForLater;
 	private bool _hasCopied = false;
@@ -49,7 +49,11 @@ public class MenuGrabbable : VRTK_InteractableObject
 	public void SetObjectInLevel()
 	{
 		this.transform.parent = this.NewParent;
-		this.transform.localScale = new Vector3(NewScale, NewScale, NewScale);
+		this.transform.localScale = NewScale;
+		
+		var r = this.GetComponent<RobotBehaviourScript>();
+		r.IsConnectable = true;
+		
 		Destroy(this.GetComponent<MenuButtonHighlighter>());
 		this.cloneForLater.SetActive(true);
 	}
