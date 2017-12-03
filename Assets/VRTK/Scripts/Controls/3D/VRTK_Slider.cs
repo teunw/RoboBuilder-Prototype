@@ -224,18 +224,21 @@ namespace VRTK
         protected virtual void InitJoint()
         {
             sliderJoint = GetComponent<ConfigurableJoint>();
-            if (sliderJoint == null)
-            {
-                sliderJoint = gameObject.AddComponent<ConfigurableJoint>();
-            }
+//            if (sliderJoint == null)
+//            {
+//                sliderJoint = gameObject.AddComponent<ConfigurableJoint>();
+//            }
 
-            sliderJoint.xMotion = (finalDirection == Direction.x ? ConfigurableJointMotion.Free : ConfigurableJointMotion.Locked);
-            sliderJoint.yMotion = (finalDirection == Direction.y ? ConfigurableJointMotion.Free : ConfigurableJointMotion.Locked);
-            sliderJoint.zMotion = (finalDirection == Direction.z ? ConfigurableJointMotion.Free : ConfigurableJointMotion.Locked);
-
-            sliderJoint.angularXMotion = ConfigurableJointMotion.Locked;
-            sliderJoint.angularYMotion = ConfigurableJointMotion.Locked;
-            sliderJoint.angularZMotion = ConfigurableJointMotion.Locked;
+//            sliderJoint.xMotion = (finalDirection == Direction.x ? ConfigurableJointMotion.Free : ConfigurableJointMotion.Locked);
+//            sliderJoint.yMotion = (finalDirection == Direction.y ? ConfigurableJointMotion.Free : ConfigurableJointMotion.Locked);
+//            sliderJoint.zMotion = (finalDirection == Direction.z ? ConfigurableJointMotion.Free : ConfigurableJointMotion.Locked);
+//            sliderJoint.xMotion = ConfigurableJointMotion.Free;
+//            sliderJoint.yMotion = ConfigurableJointMotion.Free;
+//            sliderJoint.zMotion = ConfigurableJointMotion.Free;
+//            
+//            sliderJoint.angularXMotion = ConfigurableJointMotion.Locked;
+//            sliderJoint.angularYMotion = ConfigurableJointMotion.Locked;
+//            sliderJoint.angularZMotion = ConfigurableJointMotion.Locked;
 
             ToggleSpring(false);
             sliderJointCreated = true;
