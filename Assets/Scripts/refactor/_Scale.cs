@@ -29,7 +29,7 @@ public class _Scale : RobotBehaviourScript
     {
         base.Copy(ref copyO);
 
-        var copy = copyO as _Move;
+        var copy = copyO as _Scale;
         if (copy != null)
         {
             copy.Step = Step;

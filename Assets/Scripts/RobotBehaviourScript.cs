@@ -9,17 +9,37 @@ public abstract class RobotBehaviourScript : MonoBehaviour
 {
     [HideInInspector] public GameObject Cube;
 
-    [ShowInRobot] public bool Enabled = true;
+    [ShowInRobot] public bool enabled = true;
+    
+    public bool Enabled
+    {
+        get { return enabled; }
+        set
+        {
+            if (enabled != value)
+            {
+                enabled = value;
+                EnabledChanged();
+            }
+            enabled = value;
+        }
+    }
+    
 
     public bool IsConnectable = true;
 
     public Receiver Receiver;
 
+    [Obsolete]
     public Transform slider;
 
     void Start()
     {
         Init();
+    }
+
+    protected virtual void EnabledChanged()
+    {
     }
 
     protected void Init()

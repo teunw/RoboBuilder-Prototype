@@ -4,19 +4,27 @@ using UnityEngine;
 public class _Rotate : RobotBehaviourScript {
 
 	[ShowInRobot]
-	public Vector3 Step = new Vector3(.5f,.5f,.5f);
+	public Vector3 Step = new Vector3(0,90,0);
 
 	[ShowInRobot]
-	public Vector3 Total = new Vector3(0,0,30f);
+	public Vector3 Total = new Vector3(0,90,0);
 
 	public Vector3 Current = new Vector3(0,0,0);
 	
 	void Update () {
 		if (Enabled)
 		{
-			transform.eulerAngles = transform.eulerAngles + Step * Time.deltaTime;
+			Vector3 a = Step * Time.deltaTime;
+			if (Current.y + a.y <= Total.y)
+			{
+				transform.eulerAngles = transform.eulerAngles + a;
+			}
+			else if(Current.y + a.y > Total.y)
+			{
+				Debug.Log("total - current" +  (Total.y - Current.y));
+				transform.eulerAngles = new Vector3(transform.eulerAngles.x, Total.y - Current.y, transform.eulerAngles.z);
+			}
 
-			//todo : make sure this works for all directions
 			Current += Step * Time.deltaTime;
 			if (Current.x >= Total.x && Current.y >=Total.y && Current.z >=Total.z)
 			{

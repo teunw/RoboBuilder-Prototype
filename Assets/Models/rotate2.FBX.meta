@@ -1,22 +1,20 @@
 fileFormatVersion: 2
-guid: d47feba516ac636419bf9d319f22a051
-timeCreated: 1511346892
+guid: ab1eb75ae07c4084faf22a3c8e17af12
+timeCreated: 1512472962
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: //RootNode
-    100002: Circle001
-    100004: obj_0
-    400000: //RootNode
-    400002: Circle001
-    400004: obj_0
-    2300000: //RootNode
-    2300002: Circle001
-    2300004: obj_0
-    3300000: //RootNode
-    3300002: Circle001
-    3300004: obj_0
+    100000: Circle001
+    100002: obj_0
+    100004: //RootNode
+    400000: Circle001
+    400002: obj_0
+    400004: //RootNode
+    2300000: Circle001
+    2300002: obj_0
+    3300000: Circle001
+    3300002: obj_0
     4300000: obj_0
     4300002: Circle001
     9500000: //RootNode
