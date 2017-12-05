@@ -1,0 +1,307 @@
+fileFormatVersion: 2
+guid: 456685a70a022e84f8b8f920d6d7056b
+timeCreated: 1512467982
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: DoorR
+    100004: LeftDoor
+    400000: //RootNode
+    400002: DoorR
+    400004: LeftDoor
+    2300000: //RootNode
+    2300002: DoorR
+    2300004: LeftDoor
+    3300000: //RootNode
+    3300002: DoorR
+    3300004: LeftDoor
+    4300000: closet
+    4300002: DoorR
+    4300004: LeftDoor
+    7400000: closet|bed|Take 001|BaseLayer
+    7400002: closet|BottomHand|Take 001|BaseLayer
+    7400004: closet|BottomLocker|Take 001|BaseLayer
+    7400006: closet|Box01_kithen|Take 001|BaseLayer
+    7400008: closet|Box02_kithen|Take 001|BaseLayer
+    7400010: closet|Box03|Take 001|BaseLayer
+    7400012: closet|Box04_kithen|Take 001|BaseLayer
+    7400014: closet|Box05_kithen|Take 001|BaseLayer
+    7400016: closet|CERSANIT_K08_016_wc_kompakt_PRESIDENT__3202_CHROM|Take 001|Base
+    7400018: closet|CERSANIT_K08_016_wc_kompakt_PRESIDENT_CERAMIKA_CERSANIT|Take 00
+    7400020: closet|CERSANIT_K08_016_wc_kompakt_PRESIDENT_DESKA|Take 001|BaseLayer
+    7400022: closet|CERSANIT_K08_016_wc_kompakt_PRESIDENT_ZBIORNIK|Take 001|BaseLay
+    7400024: closet|chair|Take 001|BaseLayer
+    7400026: closet|ChamferBox01|Take 001|BaseLayer
+    7400028: closet|ChamferBox02_kithen|Take 001|BaseLayer
+    7400030: closet|ChamferBox03_kithen|Take 001|BaseLayer
+    7400032: closet|ChamferBox04_kithen|Take 001|BaseLayer
+    7400034: closet|ChamferBox04|Take 001|BaseLayer
+    7400036: closet|ChamferBox05|Take 001|BaseLayer
+    7400038: closet|ChamferBox06|Take 001|BaseLayer
+    7400040: closet|ChamferBox07_kithen'|Take 001|BaseLayer
+    7400042: closet|ChamferBox08_kithen|Take 001|BaseLayer
+    7400044: closet|ChamferBox09|Take 001|BaseLayer
+    7400046: closet|ChamferBox10|Take 001|BaseLayer
+    7400048: closet|Circle25|Take 001|BaseLayer
+    7400050: closet|Circle26|Take 001|BaseLayer
+    7400052: closet|Circle27|Take 001|BaseLayer
+    7400054: closet|Circle28|Take 001|BaseLayer
+    7400056: closet|Circle29|Take 001|BaseLayer
+    7400058: closet|Circle30|Take 001|BaseLayer
+    7400060: closet|Circle31|Take 001|BaseLayer
+    7400062: closet|Circle32|Take 001|BaseLayer
+    7400064: closet|closet|Take 001|BaseLayer
+    7400066: closet|Cylinder013|Take 001|BaseLayer
+    7400068: closet|Cylinder014|Take 001|BaseLayer
+    7400070: closet|Cylinder015|Take 001|BaseLayer
+    7400072: closet|Cylinder016|Take 001|BaseLayer
+    7400074: closet|Cylinder017|Take 001|BaseLayer
+    7400076: closet|Cylinder018|Take 001|BaseLayer
+    7400078: closet|Cylinder01|Take 001|BaseLayer
+    7400080: closet|Cylinder02|Take 001|BaseLayer
+    7400082: closet|Cylinder03|Take 001|BaseLayer
+    7400084: closet|Cylinder04_kithen|Take 001|BaseLayer
+    7400086: closet|Cylinder05_kithen|Take 001|BaseLayer
+    7400088: closet|Cylinder06|Take 001|BaseLayer
+    7400090: closet|Cylinder07|Take 001|BaseLayer
+    7400092: closet|Cylinder08|Take 001|BaseLayer
+    7400094: closet|Cylinder09_kithen|Take 001|BaseLayer
+    7400096: closet|Cylinder10_kithen|Take 001|BaseLayer
+    7400098: closet|Cylinder13|Take 001|BaseLayer
+    7400100: closet|Cylinder14|Take 001|BaseLayer
+    7400102: closet|Cylinder15|Take 001|BaseLayer
+    7400104: closet|Cylinder16|Take 001|BaseLayer
+    7400106: closet|floor|Take 001|BaseLayer
+    7400108: closet|Group02_kithen|Take 001|BaseLayer
+    7400110: closet|Group03|Take 001|BaseLayer
+    7400112: closet|kitchen|Take 001|BaseLayer
+    7400114: closet|KLUDI_BOZZ_bateria_wannowa_383910576_3_L0_VENTILROSETTE_3839105
+    7400116: closet|KLUDI_BOZZ_bateria_wannowa_383910576_3_L10_ABLAUFHEBEL_38391057
+    7400118: closet|KLUDI_BOZZ_bateria_wannowa_383910576_3_L11_ABLAUFHEBEL_38391057
+    7400120: closet|KLUDI_BOZZ_bateria_wannowa_383910576_3_L12_ABLAUFHEBEL_38391057
+    7400122: closet|KLUDI_BOZZ_bateria_wannowa_383910576_3_L13_HEBEL_383910576_0|Ta
+    7400124: closet|KLUDI_BOZZ_bateria_wannowa_383910576_3_L14_HEBEL_383910576_1|Ta
+    7400126: closet|KLUDI_BOZZ_bateria_wannowa_383910576_3_L15_HEBEL_383910576_2|Ta
+    7400128: closet|KLUDI_BOZZ_bateria_wannowa_383910576_3_L16_HEBEL_383910576_3|Ta
+    7400130: closet|KLUDI_BOZZ_bateria_wannowa_383910576_3_L17_HEBEL_383910576_4|Ta
+    7400132: closet|KLUDI_BOZZ_bateria_wannowa_383910576_3_L18_HEBEL_383910576_5|Ta
+    7400134: closet|KLUDI_BOZZ_bateria_wannowa_383910576_3_L19_HEBEL_383910576_6|Ta
+    7400136: closet|KLUDI_BOZZ_bateria_wannowa_383910576_3_L1_VENTILROSETTE_3839105
+    7400138: closet|KLUDI_BOZZ_bateria_wannowa_383910576_3_L20_HEBEL_383910576_7|Ta
+    7400140: closet|KLUDI_BOZZ_bateria_wannowa_383910576_3_L21_HEBEL_383910576_0|Ta
+    7400142: closet|KLUDI_BOZZ_bateria_wannowa_383910576_3_L22_HEBEL_383910576_1|Ta
+    7400144: closet|KLUDI_BOZZ_bateria_wannowa_383910576_3_L23_HEBEL_383910576_2|Ta
+    7400146: closet|KLUDI_BOZZ_bateria_wannowa_383910576_3_L24_HEBEL_383910576_3|Ta
+    7400148: closet|KLUDI_BOZZ_bateria_wannowa_383910576_3_L25_HEBEL_383910576_4|Ta
+    7400150: closet|KLUDI_BOZZ_bateria_wannowa_383910576_3_L26_HEBEL_383910576_5|Ta
+    7400152: closet|KLUDI_BOZZ_bateria_wannowa_383910576_3_L27_HEBEL_383910576_6|Ta
+    7400154: closet|KLUDI_BOZZ_bateria_wannowa_383910576_3_L28_HEBEL_383910576_7|Ta
+    7400156: closet|KLUDI_BOZZ_bateria_wannowa_383910576_3_L29_AUSGUS_383910576_0|T
+    7400158: closet|KLUDI_BOZZ_bateria_wannowa_383910576_3_L2_VENTILROSETTE_3839105
+    7400160: closet|KLUDI_BOZZ_bateria_wannowa_383910576_3_L30_AUSGUS_383910576_1|T
+    7400162: closet|KLUDI_BOZZ_bateria_wannowa_383910576_3_L31_AUSGUS_383910576_2|T
+    7400164: closet|KLUDI_BOZZ_bateria_wannowa_383910576_3_L32_PERLATORD24_1|Take
+      0
+    7400166: closet|KLUDI_BOZZ_bateria_wannowa_383910576_3_L33_PERLATORD24_2|Take
+      0
+    7400168: closet|KLUDI_BOZZ_bateria_wannowa_383910576_3_L34_PERLATORD24_3|Take
+      0
+    7400170: closet|KLUDI_BOZZ_bateria_wannowa_383910576_3_L35_PERLATORD24_4|Take
+      0
+    7400172: closet|KLUDI_BOZZ_bateria_wannowa_383910576_3_L36_VENTILROSETTE_383910
+    7400174: closet|KLUDI_BOZZ_bateria_wannowa_383910576_3_L37_VENTILROSETTE_383910
+    7400176: closet|KLUDI_BOZZ_bateria_wannowa_383910576_3_L38_VENTILROSETTE_383910
+    7400178: closet|KLUDI_BOZZ_bateria_wannowa_383910576_3_L39_VENTILROSETTE_383910
+    7400180: closet|KLUDI_BOZZ_bateria_wannowa_383910576_3_L3_VENTILROSETTE_3839105
+    7400182: closet|KLUDI_BOZZ_bateria_wannowa_383910576_3_L4_VENTILROSETTE_3839105
+    7400184: closet|KLUDI_BOZZ_bateria_wannowa_383910576_3_L5_VENTILROSETTE_3839105
+    7400186: closet|KLUDI_BOZZ_bateria_wannowa_383910576_3_L6_VENTILROSETTE_3839105
+    7400188: closet|KLUDI_BOZZ_bateria_wannowa_383910576_3_L7_VENTILROSETTE_3839105
+    7400190: closet|KLUDI_BOZZ_bateria_wannowa_383910576_3_L8_VENTILROSETTE_3839105
+    7400192: closet|KLUDI_BOZZ_bateria_wannowa_383910576_3_L9_VENTILROSETTE_3839105
+    7400194: closet|KLUDI_uchwyt_na_papier_4897105_3_L0_ROLLENHALTER_4897105_0|Take
+    7400196: closet|KLUDI_uchwyt_na_papier_4897105_3_L10_KLOROLLE_1|Take 001|BaseLa
+    7400198: closet|KLUDI_uchwyt_na_papier_4897105_3_L11_KLOROLLE_2|Take 001|BaseLa
+    7400200: closet|KLUDI_uchwyt_na_papier_4897105_3_L12_KLOROLLE_3|Take 001|BaseLa
+    7400202: closet|KLUDI_uchwyt_na_papier_4897105_3_L13_KLOROLLE_4|Take 001|BaseLa
+    7400204: closet|KLUDI_uchwyt_na_papier_4897105_3_L14_KLOROLLE_5|Take 001|BaseLa
+    7400206: closet|KLUDI_uchwyt_na_papier_4897105_3_L1_ROLLENHALTER_4897105_1|Take
+    7400208: closet|KLUDI_uchwyt_na_papier_4897105_3_L2_ROLLENHALTER_4897105_2|Take
+    7400210: closet|KLUDI_uchwyt_na_papier_4897105_3_L3_ROLLENHALTER_4897105_3|Take
+    7400212: closet|KLUDI_uchwyt_na_papier_4897105_3_L4_ROLLENHALTER_4897105_4|Take
+    7400214: 'closet|KLUDI_uchwyt_na_papier_4897105_3_L5_BASISHALTER_4897105_0|Take '
+    7400216: 'closet|KLUDI_uchwyt_na_papier_4897105_3_L6_BASISHALTER_4897105_1|Take '
+    7400218: 'closet|KLUDI_uchwyt_na_papier_4897105_3_L7_BASISHALTER_4897105_2|Take '
+    7400220: 'closet|KLUDI_uchwyt_na_papier_4897105_3_L8_BASISHALTER_4897105_3|Take '
+    7400222: 'closet|KLUDI_uchwyt_na_papier_4897105_3_L9_BASISHALTER_4897105_4|Take '
+    7400224: closet|lamp2|Take 001|BaseLayer
+    7400226: closet|lamp|Take 001|BaseLayer
+    7400228: closet|Line30|Take 001|BaseLayer
+    7400230: closet|Line31|Take 001|BaseLayer
+    7400232: closet|Line32|Take 001|BaseLayer
+    7400234: closet|Line33|Take 001|BaseLayer
+    7400236: closet|Line35|Take 001|BaseLayer
+    7400238: closet|Line36|Take 001|BaseLayer
+    7400240: closet|Line38|Take 001|BaseLayer
+    7400242: closet|Line39|Take 001|BaseLayer
+    7400244: closet|Line40|Take 001|BaseLayer
+    7400246: closet|lun12|Take 001|BaseLayer
+    7400248: closet|lun13|Take 001|BaseLayer
+    7400250: closet|lun14|Take 001|BaseLayer
+    7400252: closet|lun15|Take 001|BaseLayer
+    7400254: closet|nightTable|Take 001|BaseLayer
+    7400256: closet|Rectangle141|Take 001|BaseLayer
+    7400258: closet|Rectangle142|Take 001|BaseLayer
+    7400260: closet|Rectangle143|Take 001|BaseLayer
+    7400262: closet|Rectangle144|Take 001|BaseLayer
+    7400264: closet|Rectangle145|Take 001|BaseLayer
+    7400266: closet|Rectangle146|Take 001|BaseLayer
+    7400268: closet|Rectangle147|Take 001|BaseLayer
+    7400270: closet|Rectangle148|Take 001|BaseLayer
+    7400272: closet|Rectangle149|Take 001|BaseLayer
+    7400274: closet|Rectangle150|Take 001|BaseLayer
+    7400276: closet|Rectangle151|Take 001|BaseLayer
+    7400278: closet|Rectangle152|Take 001|BaseLayer
+    7400280: closet|Rectangle153|Take 001|BaseLayer
+    7400282: closet|Rectangle154|Take 001|BaseLayer
+    7400284: closet|Rectangle155|Take 001|BaseLayer
+    7400286: closet|Rectangle156|Take 001|BaseLayer
+    7400288: closet|Rectangle157|Take 001|BaseLayer
+    7400290: closet|Rectangle158|Take 001|BaseLayer
+    7400292: closet|Rectangle159|Take 001|BaseLayer
+    7400294: closet|Rectangle160|Take 001|BaseLayer
+    7400296: closet|Rectangle161|Take 001|BaseLayer
+    7400298: closet|Rectangle162|Take 001|BaseLayer
+    7400300: closet|Rectangle163|Take 001|BaseLayer
+    7400302: closet|Rectangle164|Take 001|BaseLayer
+    7400304: closet|Rectangle165|Take 001|BaseLayer
+    7400306: closet|Rectangle166|Take 001|BaseLayer
+    7400308: closet|Rectangle167|Take 001|BaseLayer
+    7400310: closet|Rectangle168|Take 001|BaseLayer
+    7400312: closet|Rectangle169|Take 001|BaseLayer
+    7400314: closet|Rectangle170|Take 001|BaseLayer
+    7400316: closet|Rectangle171|Take 001|BaseLayer
+    7400318: closet|Rectangle172|Take 001|BaseLayer
+    7400320: closet|Rectangle173|Take 001|BaseLayer
+    7400322: closet|Rectangle174|Take 001|BaseLayer
+    7400324: closet|Rectangle175|Take 001|BaseLayer
+    7400326: closet|Rectangle176|Take 001|BaseLayer
+    7400328: closet|Rectangle177|Take 001|BaseLayer
+    7400330: closet|Rectangle178|Take 001|BaseLayer
+    7400332: closet|Rectangle179|Take 001|BaseLayer
+    7400334: closet|Rectangle180|Take 001|BaseLayer
+    7400336: closet|Rectangle181|Take 001|BaseLayer
+    7400338: closet|Rectangle182|Take 001|BaseLayer
+    7400340: closet|Rectangle183|Take 001|BaseLayer
+    7400342: closet|Roof|Take 001|BaseLayer
+    7400344: closet|Sink_pipes|Take 001|BaseLayer
+    7400346: closet|Sink|Take 001|BaseLayer
+    7400348: closet|Sphere01|Take 001|BaseLayer
+    7400350: closet|Sphere02|Take 001|BaseLayer
+    7400352: closet|Sphere03|Take 001|BaseLayer
+    7400354: closet|Sphere04|Take 001|BaseLayer
+    7400356: closet|Sphere05|Take 001|BaseLayer
+    7400358: closet|Sphere06|Take 001|BaseLayer
+    7400360: closet|table|Take 001|BaseLayer
+    7400362: closet|ToiletRoll|Take 001|BaseLayer
+    7400364: closet|TopHandler|Take 001|BaseLayer
+    7400366: closet|TopLocker|Take 001|BaseLayer
+    7400368: closet|Wall001|Take 001|BaseLayer
+    7400370: closet|Wall002|Take 001|BaseLayer
+    7400372: closet|WC|Take 001|BaseLayer
+    9500000: //RootNode
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: st gold
+    second: {fileID: 2100000, guid: fdfb8e321a26bb54e850fbfec1955003, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: st tile.001
+    second: {fileID: 2100000, guid: fdfb8e321a26bb54e850fbfec1955003, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: st wood
+    second: {fileID: 2100000, guid: fdfb8e321a26bb54e850fbfec1955003, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.5
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
