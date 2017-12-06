@@ -9,26 +9,43 @@ public abstract class RobotBehaviourScript : MonoBehaviour
 {
     [HideInInspector] public GameObject Cube;
 
-    [ShowInRobot] 
-    public bool Enabled = true;
+    [ShowInRobot] public bool enabled = true;
+
+    public bool Enabled
+    {
+        get { return enabled; }
+        set
+        {
+            enabled = value;
+            EnabledChanged();
+        }
+    }
+
 
     public bool IsConnectable = true;
 
     public Receiver Receiver;
 
-    public Transform slider;
+    [Obsolete] public Transform slider;
 
     void Start()
     {
         Init();
     }
 
+    protected virtual void EnabledChanged()
+    {
+    }
+
     protected void Init()
     {
         Cube = gameObject;
-        foreach (var script in GetComponents<RobotBehaviourScript>())
+        if (GetComponent<Receiver>() == null)
         {
-            script.Enabled = false;
+            foreach (var script in GetComponents<RobotBehaviourScript>())
+            {
+                script.Enabled = false;
+            }
         }
         //todo : make sure only one object has the player tag or make a different tag
         var player = GameObject.FindGameObjectsWithTag("Player").First(p => p.name == "Robot");
@@ -53,7 +70,7 @@ public abstract class RobotBehaviourScript : MonoBehaviour
         }
         Receiver.ScriptDone();
     }
-    
+
     /// <summary>
     /// Gets all fields on the script that have the attribute ShowInRobot
     /// </summary>
@@ -63,7 +80,6 @@ public abstract class RobotBehaviourScript : MonoBehaviour
     {
         if (slider != null)
         {
-
             var slider2 = Instantiate(slider);
             slider2.transform.SetParent(transform);
             slider2.transform.localScale = new Vector3(.2f, .2f, .2f);
@@ -93,7 +109,7 @@ public abstract class RobotBehaviourScript : MonoBehaviour
     /// <param name="script"></param>
     /// <param name="value"></param>
     /// <exception cref="NullReferenceException"></exception>
-    public void SetField(FieldInfo fieldInfo, RobotBehaviourScript script, object value)
+    public void SetField(FieldInfo fieldInfo, object value)
     {
         if (fieldInfo == null)
         {
@@ -101,7 +117,7 @@ public abstract class RobotBehaviourScript : MonoBehaviour
         }
         try
         {
-            fieldInfo.SetValue(script, value);
+            fieldInfo.SetValue(this, value);
         }
         catch (Exception e)
         {
@@ -116,4 +132,45 @@ public abstract class RobotBehaviourScript : MonoBehaviour
 /// </summary>
 public class ShowInRobot : Attribute
 {
+}
+
+public static class Vector3Extensions
+{
+    public enum Axis
+    {
+        X,
+        Y,
+        Z
+    }
+
+    public static void SetX(this Vector3 vector3, float value)
+    {
+        SetAxis(vector3, value, Axis.X);
+    }
+
+    public static void SetY(this Vector3 vector3, float value)
+    {
+        SetAxis(vector3, value, Axis.Y);
+    }
+
+    public static void SetZ(this Vector3 vector3, float value)
+    {
+        SetAxis(vector3, value, Axis.Z);
+    }
+
+    public static void SetAxis(this Vector3 vector3, float value, Axis axis)
+    {
+        switch (axis)
+        {
+            case Axis.X:
+                vector3.Set(value, vector3.y, vector3.z);
+                break;
+            case Axis.Y:
+                vector3.Set(vector3.x, value, vector3.z);
+                break;
+            case Axis.Z:
+                vector3.Set(vector3.x, vector3.y, value);
+                break;
+        }
+    }
 }

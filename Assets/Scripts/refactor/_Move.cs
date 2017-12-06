@@ -5,7 +5,7 @@ using UnityEngine;
 public class _Move : RobotBehaviourScript {
 
 	[ShowInRobot]
-	public Vector3 Step = new Vector3(0,0,.1f);
+	public Vector3 Step = new Vector3(0,0,.25f);
 
 	[ShowInRobot]
 	public Vector3 Total = new Vector3(0,0,1f);

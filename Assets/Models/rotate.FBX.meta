@@ -6,12 +6,26 @@ ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
+    100002: Circle001
+    100004: obj_0
     400000: //RootNode
+    400002: Circle001
+    400004: obj_0
     2300000: //RootNode
+    2300002: Circle001
+    2300004: obj_0
     3300000: //RootNode
+    3300002: Circle001
+    3300004: obj_0
     4300000: obj_0
+    4300002: Circle001
     9500000: //RootNode
   externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: No Name
+    second: {fileID: 2100000, guid: affdfd9f91448654094135bda110d6e3, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
