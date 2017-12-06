@@ -1,0 +1,159 @@
+fileFormatVersion: 2
+guid: 3d44daafe062c3240ab99f90975957ee
+timeCreated: 1512563903
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: antenna
+    100002: antenna 1
+    100004: antenna_ball
+    100006: body
+    100008: Cone001
+    100010: Cone002
+    100012: Cone003
+    100014: Cylinder002
+    100016: Cylinder003
+    100018: //RootNode
+    100020: Sphere003
+    100022: Sphere005
+    100024: Sphere006
+    100026: Sphere007
+    100028: stick_left
+    100030: stick_right
+    400000: antenna
+    400002: antenna 1
+    400004: antenna_ball
+    400006: body
+    400008: Cone001
+    400010: Cone002
+    400012: Cone003
+    400014: Cylinder002
+    400016: Cylinder003
+    400018: //RootNode
+    400020: Sphere003
+    400022: Sphere005
+    400024: Sphere006
+    400026: Sphere007
+    400028: stick_left
+    400030: stick_right
+    2300000: antenna 1
+    2300002: antenna_ball
+    2300004: body
+    2300006: Cone001
+    2300008: Cone002
+    2300010: Cone003
+    2300012: Cylinder002
+    2300014: Cylinder003
+    2300016: Sphere003
+    2300018: Sphere005
+    2300020: Sphere006
+    2300022: Sphere007
+    3300000: antenna 1
+    3300002: antenna_ball
+    3300004: body
+    3300006: Cone001
+    3300008: Cone002
+    3300010: Cone003
+    3300012: Cylinder002
+    3300014: Cylinder003
+    3300016: Sphere003
+    3300018: Sphere005
+    3300020: Sphere006
+    3300022: Sphere007
+    4300000: body
+    4300002: Sphere006
+    4300004: Cylinder003
+    4300006: Cone003
+    4300008: Sphere007
+    4300010: Sphere003
+    4300012: Cylinder002
+    4300014: Cone002
+    4300016: Sphere005
+    4300018: Cone001
+    4300020: antenna
+    4300022: antenna_ball
+    9500000: //RootNode
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: No Name
+    second: {fileID: 2100000, guid: affdfd9f91448654094135bda110d6e3, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
