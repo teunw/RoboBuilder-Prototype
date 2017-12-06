@@ -8,7 +8,6 @@ public class ConnectPoint : GrabbableObjectMidair
 {
     [Header("Connect Point parameters")] public TrailRenderer Trail;
 
-    public StartCube StartCube;
     public Receiver Receiver;
     public Transform LineParent;
     public GameObject LinePrefab;
@@ -26,7 +25,7 @@ public class ConnectPoint : GrabbableObjectMidair
 
     public GameObject GetLastGameObject()
     {
-        return LastGameObject ?? this.StartCube.gameObject;
+        return LastGameObject;
     }
 
     public void NullifyInCurrentTransmitter()
@@ -82,7 +81,6 @@ public class ConnectPoint : GrabbableObjectMidair
             return;
         }
 
-        this.StartCube.Transmitters.Add(_inCurrentTransmitter);
         this.Receiver.AddScript(this._inCurrentTransmitter);
         ResetLineAndPoint();
         MoveToNextObject();
@@ -124,7 +122,10 @@ public class ConnectPoint : GrabbableObjectMidair
         this.gameObject.transform.parent.transform.parent = _inCurrentTransmitter.gameObject.transform;
         this.gameObject.transform.parent.transform.localPosition = new Vector3(-1.5f, 0f, 0f);
         this.gameObject.transform.parent.transform.localScale = new Vector3(.8f, .8f, .8f);
-        this.SpawnLineBetween(this.GetLastGameObject().transform, this._inCurrentTransmitter.transform);
+        if (this.GetLastGameObject() != null)
+        {
+            this.SpawnLineBetween(this.GetLastGameObject().transform, this._inCurrentTransmitter.transform);
+        }
         this.ResetLineAndPoint();
     }
 }

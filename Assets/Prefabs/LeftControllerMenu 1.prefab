@@ -20,7 +20,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4736990878399752}
   - component: {fileID: 33218479809252684}
-  - component: {fileID: 65552521327374198}
   - component: {fileID: 23802341998122074}
   m_Layer: 0
   m_Name: MenuCube
@@ -102,6 +101,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4434280809476420}
+  - component: {fileID: 114517336693444812}
   m_Layer: 0
   m_Name: LeftControllerMenu 1
   m_TagString: Untagged
@@ -167,7 +167,7 @@ Transform:
   m_GameObject: {fileID: 1297954894287904}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 0.19, y: 0.338, z: -0.092}
-  m_LocalScale: {x: 0.49489847, y: 5.007196, z: 0.43243435}
+  m_LocalScale: {x: 0.49489847, y: 0.49, z: 0.43243435}
   m_Children: []
   m_Father: {fileID: 4419148844576262}
   m_RootOrder: 1
@@ -212,7 +212,7 @@ Transform:
   m_GameObject: {fileID: 1139929917140012}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: -0.304, y: -0.151, z: -0.102}
-  m_LocalScale: {x: 0.0745642, y: 0.50744915, z: 0.0745642}
+  m_LocalScale: {x: 0.07, y: 0.07, z: 0.07}
   m_Children: []
   m_Father: {fileID: 4419148844576262}
   m_RootOrder: 3
@@ -251,7 +251,7 @@ Transform:
   m_GameObject: {fileID: 1773485159826008}
   m_LocalRotation: {x: -0.000000083816445, y: 0.7071067, z: 0.7071068, w: 0.00000012530731}
   m_LocalPosition: {x: 0.152, y: -0.13, z: -0.047}
-  m_LocalScale: {x: 0.507905, y: 4.302492, z: 0.507905}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 4419148844576262}
   m_RootOrder: 2
@@ -531,20 +531,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3.556002, y: 3.556002, z: 0.959354}
+  m_Size: {x: 3.556002, y: 3.556002, z: 3}
   m_Center: {x: 2.3554327e-21, y: 0.0000009557277, z: 0.17038636}
---- !u!65 &65552521327374198
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1062314190342442}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!65 &65719922508885184
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -555,7 +543,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.76977, y: 0.026127916, z: 0.7697699}
+  m_Size: {x: 0.76977, y: 0.1, z: 0.7697699}
   m_Center: {x: 0.025115, y: -0.010859319, z: 0.025115002}
 --- !u!65 &65773435841326356
 BoxCollider:
@@ -567,7 +555,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 5.1199894, y: 0.23839352, z: 4.7733483}
+  m_Size: {x: 5.1199894, y: 0.4, z: 4.7733483}
   m_Center: {x: 0.000004996084, y: -0.03836858, z: 0.2054028}
 --- !u!65 &65973335848918184
 BoxCollider:
@@ -579,7 +567,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.7845, y: 0.02409471, z: 0.8405002}
+  m_Size: {x: 0.7845, y: 0.1, z: 0.8405002}
   m_Center: {x: -0.04224, y: -0.005636491, z: -0.000020020554}
 --- !u!114 &114025922120339044
 MonoBehaviour:
@@ -606,7 +594,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   active: 1
   unhighlightOnDisable: 1
-  thickness: 1
+  thickness: 0.2
   customOutlineModels: []
   customOutlineModelPaths: []
   enableSubmeshHighlight: 0
@@ -641,7 +629,7 @@ MonoBehaviour:
   allowedUseControllers: 2
   usingState: 0
   NewParent: {fileID: 0}
-  NewScale: {x: 0.1, y: 0.2, z: 0.1}
+  NewScale: {x: 0.1, y: 0.1, z: 0.1}
 --- !u!114 &114101843558496980
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -655,7 +643,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   active: 1
   unhighlightOnDisable: 1
-  thickness: 1
+  thickness: 0.2
   customOutlineModels: []
   customOutlineModelPaths: []
   enableSubmeshHighlight: 0
@@ -701,7 +689,7 @@ MonoBehaviour:
   allowedUseControllers: 2
   usingState: 0
   NewParent: {fileID: 0}
-  NewScale: {x: 0.5, y: 8, z: 0.5}
+  NewScale: {x: 0.5, y: 0.5, z: 0.5}
 --- !u!114 &114157848939836568
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -715,7 +703,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   active: 1
   unhighlightOnDisable: 1
-  thickness: 1
+  thickness: 0.2
   customOutlineModels: []
   customOutlineModelPaths: []
   enableSubmeshHighlight: 0
@@ -780,7 +768,7 @@ MonoBehaviour:
   allowedUseControllers: 2
   usingState: 0
   NewParent: {fileID: 0}
-  NewScale: {x: 0.5, y: 8, z: 0.5}
+  NewScale: {x: 0.5, y: 0.5, z: 0.5}
 --- !u!114 &114243844789514194
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -806,8 +794,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Cube: {fileID: 0}
   Enabled: 0
+  IsConnectable: 0
   Receiver: {fileID: 0}
-  Material: {fileID: 2100000, guid: 33af27359b49eda48829e2c0bf1e12b8, type: 2}
+  slider: {fileID: 0}
+  Material: {fileID: 2100000, guid: f5a180e78cba3b64d9cffa9c458a391d, type: 2}
 --- !u!114 &114353998921469106
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -821,7 +811,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Cube: {fileID: 0}
   Enabled: 0
+  IsConnectable: 0
   Receiver: {fileID: 0}
+  slider: {fileID: 0}
   Step: {x: 0.5, y: 0.5, z: 0.5}
   Total: {x: 0, y: 0, z: 1}
   Current: {x: 0, y: 0, z: 0}
@@ -838,7 +830,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Cube: {fileID: 0}
   Enabled: 0
+  IsConnectable: 0
   Receiver: {fileID: 0}
+  slider: {fileID: 0}
   Step: {x: 0.5, y: 0.5, z: 0.5}
   Total: {x: 0, y: 0, z: 30}
   Current: {x: 0, y: 0, z: 0}
@@ -873,6 +867,17 @@ MonoBehaviour:
   onGrabCollisionDelay: 0
   destroyImmediatelyOnThrow: 1
   breakForce: 1500
+--- !u!114 &114517336693444812
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1728785864716280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e470ce32c860f2418c81cb24ce4e36d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114562586807330564
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -886,7 +891,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   active: 1
   unhighlightOnDisable: 1
-  thickness: 1
+  thickness: 0.2
   customOutlineModels: []
   customOutlineModelPaths: []
   enableSubmeshHighlight: 0
@@ -903,7 +908,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Cube: {fileID: 0}
   Enabled: 0
+  IsConnectable: 0
   Receiver: {fileID: 0}
+  slider: {fileID: 0}
   Step: {x: 0, y: 0, z: 0.1}
   Total: {x: 0, y: 0, z: 1}
   Current: {x: 0, y: 0, z: 0}
