@@ -145,7 +145,7 @@ public class Receiver : MonoBehaviour
         Debug.Log("trigger called");
         if (other.GetComponent<Transmitter>() != null)
         {
-            AddScript(other.GetComponent<Transmitter>());
+//            AddScript(other.GetComponent<Transmitter>());
         }
     }
     /// <summary>
