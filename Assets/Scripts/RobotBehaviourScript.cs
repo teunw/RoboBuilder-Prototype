@@ -10,28 +10,23 @@ public abstract class RobotBehaviourScript : MonoBehaviour
     [HideInInspector] public GameObject Cube;
 
     [ShowInRobot] public bool enabled = true;
-    
+
     public bool Enabled
     {
         get { return enabled; }
         set
         {
-            if (enabled != value)
-            {
-                enabled = value;
-                EnabledChanged();
-            }
             enabled = value;
+            EnabledChanged();
         }
     }
-    
+
 
     public bool IsConnectable = true;
 
     public Receiver Receiver;
 
-    [Obsolete]
-    public Transform slider;
+    [Obsolete] public Transform slider;
 
     void Start()
     {
@@ -45,9 +40,12 @@ public abstract class RobotBehaviourScript : MonoBehaviour
     protected void Init()
     {
         Cube = gameObject;
-        foreach (var script in GetComponents<RobotBehaviourScript>())
+        if (GetComponent<Receiver>() == null)
         {
-            script.Enabled = false;
+            foreach (var script in GetComponents<RobotBehaviourScript>())
+            {
+                script.Enabled = false;
+            }
         }
         //todo : make sure only one object has the player tag or make a different tag
         var player = GameObject.FindGameObjectsWithTag("Player").First(p => p.name == "Robot");

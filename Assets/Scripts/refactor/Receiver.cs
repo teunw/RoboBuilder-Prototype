@@ -26,9 +26,8 @@ public class Receiver : MonoBehaviour
         startPos = transform.position;
         startRot = transform.rotation;
         startScale = transform.localScale;
-
-        NextScript();
-        currentScript = 0;
+        
+        SetCurrentActive();
     }
 
     void Update()
@@ -81,6 +80,7 @@ public class Receiver : MonoBehaviour
         }
         // set the currentscript to the index of the start when a end of a loop is hit
         currentScript = ForloopLogic();
+        increment();
         SetCurrentActive();
     }
     
@@ -98,16 +98,22 @@ public class Receiver : MonoBehaviour
             currentScript = GetIndexOfScript(script.other);
             return ForloopLogic();
         }
-        currentScript = (currentScript + 1) % GetComponents<RobotBehaviourScript>().Length;
+        increment();
         return ForloopLogic();
     }
+
+    private void increment()
+    {
+        currentScript = (currentScript + 1) % GetComponents<RobotBehaviourScript>().Length;
+    }
+
     /// <summary>
     /// Goes to the next script and set the corresponding scipts to Enabled and disabled
     /// </summary>
     private void SetCurrentActive()
     {
         RobotBehaviourScript[] scripts;
-        currentScript = (currentScript + 1) % GetComponents<RobotBehaviourScript>().Length;
+        //todo : should this have the increment ?
         scripts = GetComponents<RobotBehaviourScript>();
         for (int i = 0; i < scripts.Length; i++)
         {

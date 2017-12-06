@@ -37,18 +37,18 @@ public class _RotateDown : RobotBehaviourScript {
 			}
 			else if(Current.y + deltaStep.y < Total.y)
 			{
-				transform.eulerAngles = new Vector3(transform.eulerAngles.x, (startDegree + Total.y)%360, transform.eulerAngles.z); // todo : make sure to add it
+				transform.eulerAngles = new Vector3(transform.eulerAngles.x, (startDegree + Total.y)%360, transform.eulerAngles.z);
 			}
 			
 			Current += Step * Time.deltaTime;
 			if (Current.x <= Total.x && Current.y <=Total.y && Current.z <=Total.z)
 			{
-				Current = new Vector3(0,0,0);
+				Current = new Vector3();
 				Done();
 			}
 		}
 	}
-	
+
 	public override void Copy<T>(ref T copyO)
 	{
 		base.Copy(ref copyO);

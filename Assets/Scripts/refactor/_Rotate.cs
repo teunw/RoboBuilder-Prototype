@@ -11,18 +11,33 @@ public class _Rotate : RobotBehaviourScript {
 
 	public Vector3 Current = new Vector3(0,0,0);
 	
+	public float startDegree;
+	
+	private void Start()
+	{
+		Init();
+		EnabledChanged();
+	}
+
+	protected override void EnabledChanged()
+	{
+		base.EnabledChanged();
+		if (Enabled)
+		{
+			startDegree = transform.eulerAngles.y;
+		}
+	}
 	void Update () {
 		if (Enabled)
 		{
-			Vector3 a = Step * Time.deltaTime;
-			if (Current.y + a.y <= Total.y)
+			Vector3 deltaStep = Step * Time.deltaTime;
+			if (Current.y + deltaStep.y <= Total.y)
 			{
-				transform.eulerAngles = transform.eulerAngles + a;
+				transform.eulerAngles = transform.eulerAngles + deltaStep;
 			}
-			else if(Current.y + a.y > Total.y)
+			else if(Current.y + deltaStep.y > Total.y)
 			{
-				Debug.Log("total - current" +  (Total.y - Current.y));
-				transform.eulerAngles = new Vector3(transform.eulerAngles.x, Total.y - Current.y, transform.eulerAngles.z);
+				transform.eulerAngles = new Vector3(transform.eulerAngles.x, (startDegree+ Total.y)%360, transform.eulerAngles.z);
 			}
 
 			Current += Step * Time.deltaTime;
