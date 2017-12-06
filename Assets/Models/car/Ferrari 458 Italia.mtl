@@ -1,0 +1,383 @@
+# MTL written from /Users/manapoly/Desktop/Yusup/Models/Land/Ferrari/458 Italia/Ferrari 458 Italia.obj
+newmtl 458_032Italia
+Kd 0.127059 0.127059 0.127059
+Ns 64
+d 1
+illum 2
+Ka 0 0 0
+Ks 0.15 0.15 0.15
+map_Kd /Users/manapoly/Desktop/Yusup/Models/Land/Ferrari/458 Italia/458italia.jpg
+newmtl Body
+Kd 0.441529 0.0158824 0.0158824
+Ns 26.9087
+d 1
+illum 2
+Ka 0 0 0
+Ks 0.8 0.8 0.8
+newmtl Chassis
+Kd 0.231373 0.231373 0.231373
+Ns 64
+d 1
+illum 2
+Ka 0 0 0
+Ks 0.12 0.12 0.12
+newmtl Chrome
+Kd 0.290196 0.290196 0.290196
+Ns 16
+d 1
+illum 2
+Ka 0 0 0
+Ks 0.82 0.82 0.82
+newmtl Clignotant
+Kd 0.639216 0.180392 0.129412
+Ns 64
+d 0.8
+illum 2
+Ka 0 0 0
+Ks 0.15 0.15 0.15
+map_Kd /Users/manapoly/Desktop/Yusup/Models/Land/Ferrari/458 Italia/lights.jpg
+newmtl Compteur_032glass
+Kd 0.654902 0.654902 0.654902
+Ns 64
+d 0.04
+illum 2
+Ka 0 0 0
+Ks 0.3 0.3 0.3
+newmtl Compteur_032km
+Kd 0.164706 0.164706 0.164706
+Ns 4
+d 1
+illum 2
+Ka 0 0 0
+Ks 0 0 0
+map_Kd /Users/manapoly/Desktop/Yusup/Models/Land/Ferrari/458 Italia/km.jpg
+newmtl Compteur_032no
+Kd 0.164706 0.164706 0.164706
+Ns 4
+d 1
+illum 2
+Ka 0 0 0
+Ks 0 0 0
+map_Kd /Users/manapoly/Desktop/Yusup/Models/Land/Ferrari/458 Italia/nauto.jpg
+newmtl Comptour
+Kd 0.92549 0.733333 0.0588235
+Ns 64
+d 1
+illum 2
+Ka 0 0 0
+Ks 0.1 0.1 0.1
+map_Kd /Users/manapoly/Desktop/Yusup/Models/Land/Ferrari/458 Italia/comptour.jpg
+newmtl Default
+Kd 0.8 0.8 0.8
+Ns 256
+d 1
+illum 2
+Ka 0 0 0
+Ks 0.2 0.2 0.2
+newmtl Dessous
+Kd 0.219608 0.219608 0.219608
+Ns 256
+d 1
+illum 2
+Ka 0 0 0
+Ks 0.2 0.2 0.2
+newmtl Disk
+Kd 0.215294 0.218824 0.211765
+Ns 64
+d 1
+illum 2
+Ka 0 0 0
+Ks 0.17 0.17 0.17
+map_Kd /Users/manapoly/Desktop/Yusup/Models/Land/Ferrari/458 Italia/Freio(2).jpg
+newmtl Feux_032blanc
+Kd 0.666667 0.643137 0.607843
+Ns 64
+d 0.45
+illum 2
+Ka 0 0 0
+Ks 0.2 0.2 0.2
+map_Kd /Users/manapoly/Desktop/Yusup/Models/Land/Ferrari/458 Italia/lights.jpg
+newmtl Feux_032chrome
+Kd 0.192157 0.192157 0.192157
+Ns 64
+d 1
+illum 2
+Ka 0 0 0
+Ks 0.655 0.655 0.655
+newmtl Feux_032rouge
+Kd 0.658824 0.109804 0.109804
+Ns 64
+d 0.81
+illum 2
+Ka 0 0 0
+Ks 0.2 0.2 0.2
+map_Kd /Users/manapoly/Desktop/Yusup/Models/Land/Ferrari/458 Italia/lights.jpg
+newmtl Feux_032rouge_032bas
+Kd 0.592941 0.0988235 0.0988235
+Ns 64
+d 0.82
+illum 2
+Ka 0 0 0
+Ks 0.2 0.2 0.2
+map_Kd /Users/manapoly/Desktop/Yusup/Models/Land/Ferrari/458 Italia/lights.jpg
+newmtl Feux_032rouge_032stop
+Kd 0.527059 0.0878431 0.0878431
+Ns 64
+d 0.795
+illum 2
+Ka 0 0 0
+Ks 0.2 0.2 0.2
+map_Kd /Users/manapoly/Desktop/Yusup/Models/Land/Ferrari/458 Italia/lights.jpg
+newmtl Frein
+Kd 0.546667 0.546667 0.546667
+Ns 64
+d 1
+illum 2
+Ka 0 0 0
+Ks 0.1 0.1 0.1
+map_Kd /Users/manapoly/Desktop/Yusup/Models/Land/Ferrari/458 Italia/freinff.jpg
+newmtl Grille
+Kd 0.160784 0.160784 0.160784
+Ns 64
+d 1
+illum 2
+Ka 0 0 0
+Ks 0.07 0.07 0.07
+map_Kd /Users/manapoly/Desktop/Yusup/Models/Land/Ferrari/458 Italia/grill.jpg
+newmtl Interieur
+Kd 0.215686 0.215686 0.215686
+Ns 16
+d 1
+illum 2
+Ka 0 0 0
+Ks 0.1 0.1 0.1
+newmtl Interieur_032buttons
+Kd 0.176471 0.176471 0.176471
+Ns 64
+d 1
+illum 2
+Ka 0 0 0
+Ks 0.12 0.12 0.12
+map_Kd /Users/manapoly/Desktop/Yusup/Models/Land/Ferrari/458 Italia/buttons.jpg
+newmtl Interieur_032buttons_032v
+Kd 0.176471 0.176471 0.176471
+Ns 64
+d 1
+illum 2
+Ka 0 0 0
+Ks 0.12 0.12 0.12
+map_Kd /Users/manapoly/Desktop/Yusup/Models/Land/Ferrari/458 Italia/boutonsv.jpg
+newmtl Interieur_032light
+Kd 0.611765 0.596078 0.596078
+Ns 256
+d 0.88
+illum 2
+Ka 0 0 0
+Ks 0.25 0.25 0.25
+map_Kd /Users/manapoly/Desktop/Yusup/Models/Land/Ferrari/458 Italia/feuxblanc2.jpg
+newmtl Interieur_032sol
+Kd 0.19451 0.19451 0.19451
+Ns 4
+d 1
+illum 2
+Ka 0 0 0
+Ks 0 0 0
+map_Kd /Users/manapoly/Desktop/Yusup/Models/Land/Ferrari/458 Italia/moquette.jpg
+newmtl Interieur_032volant
+Kd 0.176471 0.176471 0.176471
+Ns 64
+d 1
+illum 2
+Ka 0 0 0
+Ks 0.15 0.15 0.15
+map_Kd /Users/manapoly/Desktop/Yusup/Models/Land/Ferrari/458 Italia/volant2.jpg
+newmtl Jante
+Kd 0.490039 0.490039 0.490039
+Ns 14.9285
+d 1
+illum 2
+Ka 0 0 0
+Ks 0.6 0.6 0.6
+newmtl Jante_032logo
+Kd 0.816941 0.787294 0.00329412
+Ns 64
+d 1
+illum 2
+Ka 0 0 0
+Ks 0.15 0.15 0.15
+map_Kd /Users/manapoly/Desktop/Yusup/Models/Land/Ferrari/458 Italia/jantelogo.jpg
+newmtl Logo_032Ferrari
+Kd 0.778039 0.749804 0.00313726
+Ns 64
+d 1
+illum 2
+Ka 0 0 0
+Ks 0.15 0.15 0.15
+map_Kd /Users/manapoly/Desktop/Yusup/Models/Land/Ferrari/458 Italia/nodamage.jpg
+newmtl Mecanique
+Kd 0.211765 0.211765 0.211765
+Ns 64
+d 1
+illum 2
+Ka 0 0 0
+Ks 0.15 0.15 0.15
+newmtl Metal
+Kd 0.356863 0.356863 0.356863
+Ns 64
+d 1
+illum 2
+Ka 0 0 0
+Ks 0.26 0.26 0.26
+newmtl Metal_032alu
+Kd 0.478431 0.478431 0.478431
+Ns 16
+d 1
+illum 2
+Ka 0 0 0
+Ks 0.6 0.6 0.6
+newmtl Miroir
+Kd 0.227451 0.227451 0.227451
+Ns 64
+d 1
+illum 2
+Ka 0 0 0
+Ks 0.6 0.6 0.6
+newmtl Monitor
+Kd 0.138275 0.138275 0.138275
+Ns 4.28709
+d 1
+illum 2
+Ka 0 0 0
+Ks 0.04 0.04 0.04
+map_Kd /Users/manapoly/Desktop/Yusup/Models/Land/Ferrari/458 Italia/monitor.jpg
+newmtl Moteur_032noir
+Kd 0.211765 0.211765 0.211765
+Ns 32
+d 1
+illum 2
+Ka 0 0 0
+Ks 0.13 0.13 0.13
+newmtl Moteur_032rouge
+Kd 0.596078 0.0705882 0.0823529
+Ns 22.6274
+d 1
+illum 2
+Ka 0 0 0
+Ks 0.09 0.09 0.09
+newmtl Moteur_032tex
+Kd 0.211765 0.211765 0.211765
+Ns 64
+d 1
+illum 2
+Ka 0 0 0
+Ks 0.03 0.03 0.03
+map_Kd /Users/manapoly/Desktop/Yusup/Models/Land/Ferrari/458 Italia/nodamage.jpg
+newmtl Partie_032noir
+Kd 0 0 0
+Ns 8
+d 1
+illum 2
+Ka 0 0 0
+Ks 0 0 0
+newmtl Pedale1
+Kd 0.398431 0.398431 0.398431
+Ns 16
+d 1
+illum 2
+Ka 0 0 0
+Ks 0.22 0.22 0.22
+map_Kd /Users/manapoly/Desktop/Yusup/Models/Land/Ferrari/458 Italia/pedale1.jpg
+newmtl Pedale2
+Kd 0.363569 0.363569 0.363569
+Ns 16
+d 1
+illum 2
+Ka 0 0 0
+Ks 0.22 0.22 0.22
+map_Kd /Users/manapoly/Desktop/Yusup/Models/Land/Ferrari/458 Italia/pedale2.jpg
+newmtl Phare
+Kd 0.227451 0.227451 0.227451
+Ns 64
+d 1
+illum 2
+Ka 0 0 0
+Ks 0.655 0.655 0.655
+newmtl Phare_032gris
+Kd 0.225882 0.225882 0.225882
+Ns 25.9921
+d 1
+illum 2
+Ka 0 0 0
+Ks 0.6 0.6 0.6
+newmtl Phare_032optique
+Kd 0.494118 0.517647 0.529412
+Ns 16
+d 0.365
+illum 2
+Ka 0 0 0
+Ks 0.32 0.32 0.32
+newmtl Phare_032orange
+Kd 0.723529 0.525882 0.430588
+Ns 64
+d 1
+illum 2
+Ka 0 0 0
+Ks 0.15 0.15 0.15
+map_Kd /Users/manapoly/Desktop/Yusup/Models/Land/Ferrari/458 Italia/lights.jpg
+newmtl Phare_032vitre
+Kd 0.403922 0.423529 0.439216
+Ns 16
+d 0.31
+illum 2
+Ka 0 0 0
+Ks 0.32 0.32 0.32
+newmtl Plastique_032noir
+Kd 0.176471 0.176471 0.176471
+Ns 64
+d 1
+illum 2
+Ka 0 0 0
+Ks 0.15 0.15 0.15
+newmtl Plastique_032rouge
+Kd 0.670588 0.207843 0.196078
+Ns 64
+d 1
+illum 2
+Ka 0 0 0
+Ks 0.15 0.15 0.15
+newmtl Pneu
+Kd 0.176471 0.176471 0.169412
+Ns 64
+d 1
+illum 2
+Ka 0 0 0
+Ks 0.05 0.05 0.05
+newmtl Siege
+Kd 0.192157 0.192157 0.192157
+Ns 24.2515
+d 1
+illum 2
+Ka 0 0 0
+Ks 0.145 0.145 0.145
+newmtl Vitre
+Kd 0.168627 0.223529 0.207843
+Ns 16
+d 0.34
+illum 2
+Ka 0 0 0
+Ks 0.6 0.6 0.6
+newmtl Vitre_032noir
+Kd 0.0313726 0.0313726 0.0313726
+Ns 16
+d 1
+illum 2
+Ka 0 0 0
+Ks 0.455 0.455 0.455
+newmtl Warning
+Kd 0.776471 0.101961 0.0745098
+Ns 64
+d 1
+illum 2
+Ka 0 0 0
+Ks 0.15 0.15 0.15
+map_Kd /Users/manapoly/Desktop/Yusup/Models/Land/Ferrari/458 Italia/warning.jpg
