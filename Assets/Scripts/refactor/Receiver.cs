@@ -189,11 +189,11 @@ public class Receiver : MonoBehaviour
     /// </summary>
     public void PauzeScripts()
     {
+        scriptsEnabled = !scriptsEnabled;
         foreach (RobotBehaviourScript script in this.gameObject.GetComponents<RobotBehaviourScript>())
         {
-            script.Enabled = !scriptsEnabled;
+            script.Enabled = scriptsEnabled;
         }
-        scriptsEnabled = !scriptsEnabled;
     }
 
     /// <summary>
