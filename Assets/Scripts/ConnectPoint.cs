@@ -10,7 +10,7 @@ public class ConnectPoint : GrabbableObjectMidair
 
     public Receiver Receiver;
     public Transform LineParent;
-    public GameObject LinePrefab;
+    public LineRendererFollowTargets LinePrefab;
 
     private Transmitter _inCurrentTransmitter = null;
     private float TrailTime;
@@ -105,23 +105,16 @@ public class ConnectPoint : GrabbableObjectMidair
 
     public void SpawnLineBetween(Transform gm, Transform gm2)
     {
-        var newGm = Instantiate(this.LinePrefab, this.LineParent);
-        if (!newGm.HasComponent<LineRenderer>() || !newGm.HasComponent<LineRendererFollowTargets>())
-        {
-            throw new Exception("Prefab has to contain a linerenderer and linerendererfollowtargets component");
-        }
-        var lineRenderer = newGm.GetComponent<LineRenderer>();
-        lineRenderer.SetPositions(new[] {gm.transform.position, gm2.transform.position});
-
-        var lineRendererFollower = newGm.GetComponent<LineRendererFollowTargets>();
-        lineRendererFollower.GameObjects = new[] {gm, gm2};
+        Debug.Log("Spawning line");
+        var newGm = Instantiate(this.LinePrefab.gameObject, this.LineParent);
+        newGm.GetComponent<LineRendererFollowTargets>().GameObjects = new[] {gm, gm2};
     }
 
     public void MoveToNextObject()
     {
         this.gameObject.transform.parent.transform.parent = _inCurrentTransmitter.gameObject.transform;
         this.gameObject.transform.parent.transform.localPosition = new Vector3(-1.5f, 0f, 0f);
-        this.gameObject.transform.parent.transform.localScale = new Vector3(.8f, .8f, .8f);
+        this.gameObject.transform.parent.transform.localScale = new Vector3(.4f, .4f, .4f);
         if (this.GetLastGameObject() != null)
         {
             this.SpawnLineBetween(this.GetLastGameObject().transform, this._inCurrentTransmitter.transform);

@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 [RequireComponent(typeof(LineRenderer))]
 public class LineRendererFollowTargets : MonoBehaviour
 {
-	public Transform[] GameObjects;
+	public Transform[] GameObjects = new Transform[0];
+	[HideInInspector]
 	public LineRenderer LineRenderer;
 
 	public void Start()
@@ -14,17 +16,13 @@ public class LineRendererFollowTargets : MonoBehaviour
 		LineRenderer = GetComponent<LineRenderer>();
 		if (LineRenderer.positionCount != this.GameObjects.Length)
 		{
-			throw new Exception("Line renderer count doesn't match");
+			Debug.LogWarning("Line renderer count doesn't match");
 		}
 	}
 
 	// Update is called once per frame
 	void Update () {
 		if (GameObjects.Length <= 0)
-		{
-			return;
-		}
-		if (LineRenderer.positionCount != this.GameObjects.Length)
 		{
 			return;
 		}
