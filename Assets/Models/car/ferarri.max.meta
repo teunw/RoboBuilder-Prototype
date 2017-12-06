@@ -1,0 +1,353 @@
+fileFormatVersion: 2
+guid: 209c6bef3157c294980cfa0264946ca8
+timeCreated: 1512561276
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Object01_MeshPart0
+    100004: Object01_MeshPart1
+    100006: Object01_MeshPart2
+    400000: //RootNode
+    400002: Object01_MeshPart0
+    400004: Object01_MeshPart1
+    400006: Object01_MeshPart2
+    2300000: Object01_MeshPart0
+    2300002: Object01_MeshPart1
+    2300004: Object01_MeshPart2
+    3300000: Object01_MeshPart0
+    3300002: Object01_MeshPart1
+    3300004: Object01_MeshPart2
+    4300000: Object01_MeshPart0
+    4300002: Object01_MeshPart1
+    4300004: Object01_MeshPart2
+    9500000: //RootNode
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 458_032Italia
+    second: {fileID: 2100000, guid: 3b7888f847a2db34bb408fb2828d80cc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Body
+    second: {fileID: 2100000, guid: f9c1e3f9e71a8884a80607722a14f77d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Chassis
+    second: {fileID: 2100000, guid: a93ade426a22c7345b9f2efa2bcc4833, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Chrome
+    second: {fileID: 2100000, guid: 3b67739da5f9a584d842d35502f0f0d6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Clignotant
+    second: {fileID: 2100000, guid: 0bf4d410fc8dd014b8a00af5b6b3fbe6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Compteur_032glass
+    second: {fileID: 2100000, guid: 0aeff2b82761e094ba3def2bb30d0767, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Compteur_032km
+    second: {fileID: 2100000, guid: 0c37a8eccf3a0a04c8680ae4c4988b87, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Compteur_032no
+    second: {fileID: 2100000, guid: 160d4e8b04e40524c98752f2fc463c9d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Comptour
+    second: {fileID: 2100000, guid: 57e1ee4392e9e30439f9a8db67fe311a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Dessous
+    second: {fileID: 2100000, guid: edb9896b51a87d5489ccc33382c9158d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Disk
+    second: {fileID: 2100000, guid: 8153e0c20c5a28c43b964ee59ef8ddf6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Feux_032blanc
+    second: {fileID: 2100000, guid: 0bf4d410fc8dd014b8a00af5b6b3fbe6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Feux_032chrome
+    second: {fileID: 2100000, guid: 2fdb880893822d64393d5bf883d92ef9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Feux_032rouge
+    second: {fileID: 2100000, guid: 0bf4d410fc8dd014b8a00af5b6b3fbe6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Feux_032rouge_032bas
+    second: {fileID: 2100000, guid: 0bf4d410fc8dd014b8a00af5b6b3fbe6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Feux_032rouge_032stop
+    second: {fileID: 2100000, guid: 0bf4d410fc8dd014b8a00af5b6b3fbe6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Frein
+    second: {fileID: 2100000, guid: d45d73326cda9144b9209cbfd4a9ecda, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Grille
+    second: {fileID: 2100000, guid: baff6871762240145a4a32a089d51ce4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Interieur
+    second: {fileID: 2100000, guid: 6d9686a2fae15654ea3b11cf22b75507, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Interieur_032buttons
+    second: {fileID: 2100000, guid: c011c881468891a4daf41e692bd348bf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Interieur_032buttons_032v
+    second: {fileID: 2100000, guid: dccf0fa241b8e644c8dececadc21afdc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Interieur_032light
+    second: {fileID: 2100000, guid: fea4cd8baeb7ccc40b734e36e83345af, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Interieur_032sol
+    second: {fileID: 2100000, guid: eee3340c893ece249bb5e0ca67de98ea, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Interieur_032volant
+    second: {fileID: 2100000, guid: 1b39d5b1da61be54c8d8dc1eeca935e4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Jante
+    second: {fileID: 2100000, guid: 0890d3760b25d6b448c229cef1598de5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Jante_032logo
+    second: {fileID: 2100000, guid: f9733577e2cf47b459ab966d4b38a38d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Logo_032Ferrari
+    second: {fileID: 2100000, guid: 1ce0cdc0453d7fb4b9fb17bdcdc507be, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mecanique
+    second: {fileID: 2100000, guid: 468eba20b69aa7e48a20ef2b4a94603d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Metal
+    second: {fileID: 2100000, guid: 5fb934f6405b37a43ba27f5b641d26e2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Metal_032alu
+    second: {fileID: 2100000, guid: 434bee0f44c15e542a4c2e4170069b3b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Miroir
+    second: {fileID: 2100000, guid: eed5af4ff13f8914d9950fe8c794eb84, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Monitor
+    second: {fileID: 2100000, guid: 7115a39d530a9844fa382e61bd4c2f8e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Moteur_032noir
+    second: {fileID: 2100000, guid: adabc8707768ca046b773b532fc93bd3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Moteur_032rouge
+    second: {fileID: 2100000, guid: 1f1c88dfca813ea43927587f1c7cbd16, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Moteur_032tex
+    second: {fileID: 2100000, guid: 1ce0cdc0453d7fb4b9fb17bdcdc507be, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Partie_032noir
+    second: {fileID: 2100000, guid: 183e1f1a9e2d848489853e7ca91949f0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Pedale1
+    second: {fileID: 2100000, guid: 4e2813cd7c1a6c740ad682d2aa12ae4d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Pedale2
+    second: {fileID: 2100000, guid: 42355132896067f40a5aab5d9a783a26, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Phare
+    second: {fileID: 2100000, guid: 6903956a6db8eab4b9218544849c29af, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Phare_032gris
+    second: {fileID: 2100000, guid: ccdef6e0e83442443a3612cd2037b018, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Phare_032optique
+    second: {fileID: 2100000, guid: 818296ffb4820d64b8edb22adca1aaa0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Phare_032orange
+    second: {fileID: 2100000, guid: 0bf4d410fc8dd014b8a00af5b6b3fbe6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Phare_032vitre
+    second: {fileID: 2100000, guid: b20aa6daad8f3ff4e8368bba593aee6a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Plastique_032noir
+    second: {fileID: 2100000, guid: f851adef5bf6e3740b3f25a520274def, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Plastique_032rouge
+    second: {fileID: 2100000, guid: 01a785d3848a2c14e8243910d0a81560, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Pneu
+    second: {fileID: 2100000, guid: 88894aa0dd1417c43a9a891504b5907e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Siege
+    second: {fileID: 2100000, guid: c0a0d5994a35b3843bd06925a6a4f69b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Vitre
+    second: {fileID: 2100000, guid: 0f5375d447449d441baeddbd16507231, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Vitre_032noir
+    second: {fileID: 2100000, guid: 162154f79c3a3e84cbad5b9b922b4ac6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Warning
+    second: {fileID: 2100000, guid: 0ecc2505ca6969641a6b12a7b3b61cf5, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
