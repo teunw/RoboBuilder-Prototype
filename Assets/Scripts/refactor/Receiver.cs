@@ -40,7 +40,7 @@ public class Receiver : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             Debug.Log("2");
-            PauzeScripts();
+//            PauzeScripts();
         }
         if (Input.GetKeyDown(KeyCode.Alpha3))
         {
@@ -65,6 +65,16 @@ public class Receiver : MonoBehaviour
         {
             Undo();
         }
+        if (Input.GetKeyDown(KeyCode.Alpha8))
+        {
+            currentScript = 0;
+            SetCurrentActive();
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha9))
+        {
+         
+        }
+        
     }
 
   
@@ -79,28 +89,28 @@ public class Receiver : MonoBehaviour
             return;
         }
         // set the currentscript to the index of the start when a end of a loop is hit
-        currentScript = ForloopLogic();
+//        currentScript = ForloopLogic();
         increment();
         SetCurrentActive();
     }
     
-    /// <summary>
-    /// Makes sure so the current script is never the current one
-    /// </summary>
-    /// <returns></returns>
-    private int ForloopLogic()
-    {
-        int currentAddOne = (currentScript + 1) % GetComponents<RobotBehaviourScript>().Length;
-        var script = GetComponents<RobotBehaviourScript>()[currentAddOne] as _Loop;
-        if (script == null) return currentScript;
-        if (!script.start && !script.EndOfLoop())
-        {
-            currentScript = GetIndexOfScript(script.other);
-            return ForloopLogic();
-        }
-        increment();
-        return ForloopLogic();
-    }
+//    /// <summary>
+//    /// Makes sure so the current script is never the current one
+//    /// </summary>
+//    /// <returns></returns>
+//    private int ForloopLogic()
+//    {
+//        int currentAddOne = (currentScript + 1) % GetComponents<RobotBehaviourScript>().Length;
+//        var script = GetComponents<RobotBehaviourScript>()[currentAddOne] as _Loop;
+//        if (script == null) return currentScript;
+//        if (!script.start && !script.EndOfLoop())
+//        {
+//            currentScript = GetIndexOfScript(script.other);
+//            return ForloopLogic();
+//        }
+//        increment();
+//        return ForloopLogic();
+//    }
 
     private void increment()
     {
@@ -113,7 +123,6 @@ public class Receiver : MonoBehaviour
     private void SetCurrentActive()
     {
         RobotBehaviourScript[] scripts;
-        //todo : should this have the increment ?
         scripts = GetComponents<RobotBehaviourScript>();
         for (int i = 0; i < scripts.Length; i++)
         {
@@ -157,6 +166,8 @@ public class Receiver : MonoBehaviour
         if (transmitter == null) return;
         var script = (RobotBehaviourScript) gameObject.AddComponent(transmitter.BehaviourScript.GetType());
         transmitter.BehaviourScript.Copy(ref script);
+        currentScript = 0;
+        SetCurrentActive();
     }
 
     /// <summary>
@@ -182,18 +193,13 @@ public class Receiver : MonoBehaviour
         return null;
     }
 
-
-    /// <summary>
-    /// Pauzes all scripta
-    /// todo : make sure only the current script is played
-    /// </summary>
-    public void PauzeScripts()
+    public void StartScripts()
     {
-        foreach (RobotBehaviourScript script in this.gameObject.GetComponents<RobotBehaviourScript>())
-        {
-            script.Enabled = !scriptsEnabled;
-        }
-        scriptsEnabled = !scriptsEnabled;
+        ResetScripts();
+
+        currentScript = 0;
+        SetCurrentActive();
+        scriptsEnabled = true;
     }
 
     /// <summary>
@@ -201,11 +207,11 @@ public class Receiver : MonoBehaviour
     /// </summary>
     public void StopScripts()
     {
-        if (scriptsEnabled)
+        foreach (RobotBehaviourScript script in gameObject.GetComponents<RobotBehaviourScript>())
         {
-            PauzeScripts();
+            script.Enabled = false;
         }
-        ResetScripts();
+        scriptsEnabled = false;
     }
 
     /// <summary>

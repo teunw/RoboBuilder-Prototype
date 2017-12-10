@@ -31,17 +31,17 @@ public class _RotateDown : RobotBehaviourScript {
 		if (Enabled)
 		{
 			Vector3 deltaStep =  Step * Time.deltaTime;
-			if (Current.y + deltaStep.y >= Total.y)
+			if (Current.y + deltaStep.y > Total.y)
 			{
 				transform.eulerAngles = transform.eulerAngles + deltaStep;
 			}
-			else if(Current.y + deltaStep.y < Total.y)
+			else if(Current.y + deltaStep.y <= Total.y)
 			{
 				transform.eulerAngles = new Vector3(transform.eulerAngles.x, (startDegree + Total.y)%360, transform.eulerAngles.z);
 			}
 			
 			Current += Step * Time.deltaTime;
-			if (Current.x <= Total.x && Current.y <=Total.y && Current.z <=Total.z)
+			if (Current.y <=Total.y)
 			{
 				Current = new Vector3();
 				Done();

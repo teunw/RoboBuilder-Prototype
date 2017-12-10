@@ -9,7 +9,7 @@ public abstract class RobotBehaviourScript : MonoBehaviour
 {
     [HideInInspector] public GameObject Cube;
 
-    [ShowInRobot] public bool enabled = true;
+    [ShowInRobot] public bool enabled;
 
     public bool Enabled
     {

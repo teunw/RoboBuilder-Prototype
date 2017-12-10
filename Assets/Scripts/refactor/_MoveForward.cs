@@ -29,14 +29,6 @@ public class _MoveForward : RobotBehaviourScript
                 startPosition = transform.position;
                 Done();
             }
-//            _rigidbody.velocity = transform.forward * speed * Time.deltaTime;
-//
-//            Current += transform.forward * speed * Time.deltaTime;
-//            if (Current.x >= Total.x && Current.y >= Total.y && Current.z >= Total.z)
-//            {
-//                Current = new Vector3();
-//                Done();
-//            }
         }
     }
 
