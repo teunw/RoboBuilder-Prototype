@@ -4,7 +4,7 @@ using Valve.VR;
 
 public class _MoveForward : RobotBehaviourScript
 {
-    [ShowInRobot] public float Speed = .1f;
+    [ShowInRobot] public float Speed = 1f;
 
     private Rigidbody _rigidbody;
 
@@ -41,13 +41,13 @@ public class _MoveForward : RobotBehaviourScript
         switch ((int) transform.rotation.eulerAngles.y)
         {
             case 90:
-                return new Vector3(-1,0,0);
-            case 180:
-                return new Vector3(0,0,1);
-            case 270:
                 return new Vector3(1,0,0);
+            case 180:
+                return new Vector3(0,0,-1);
+            case 270:
+                return new Vector3(-1,0,0);
             case 0:
-                return new Vector3(0, 0, -1);
+                return new Vector3(0, 0, 1);
             default:
                 throw new Exception("aaaaaaa");
         }
