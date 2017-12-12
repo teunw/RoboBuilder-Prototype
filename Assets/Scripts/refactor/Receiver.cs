@@ -128,7 +128,7 @@ public class Receiver : MonoBehaviour
     /// </summary>
     private void SetCurrentActive()
     {
-        if (!scriptsEnabled)
+        if (!scriptsEnabled && !shouldLoop)
         {
             StopScripts();
             return;
@@ -208,11 +208,12 @@ public class Receiver : MonoBehaviour
 
     public void StartScripts()
     {
+        scriptsEnabled = true;
+
         ResetScripts();
 
         currentScript = 0;
         SetCurrentActive();
-        scriptsEnabled = true;
     }
 
     /// <summary>
