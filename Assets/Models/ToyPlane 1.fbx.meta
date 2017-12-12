@@ -1,0 +1,172 @@
+fileFormatVersion: 2
+guid: c090e49ffd74b5e4dbe8aeb92ee83d69
+timeCreated: 1513087019
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: back_wings
+    100002: blades
+    100004: body
+    100006: front_wings
+    100008: frontMetal
+    100010: Plane
+    100012: supports
+    100014: tail
+    100016: //RootNode
+    100018: wheel_support
+    100020: wheels
+    400000: back_wings
+    400002: blades
+    400004: body
+    400006: front_wings
+    400008: frontMetal
+    400010: Plane
+    400012: supports
+    400014: tail
+    400016: //RootNode
+    400018: wheel_support
+    400020: wheels
+    2300000: back_wings
+    2300002: blades
+    2300004: body
+    2300006: front_wings
+    2300008: frontMetal
+    2300010: Plane
+    2300012: supports
+    2300014: tail
+    2300016: wheel_support
+    2300018: wheels
+    3300000: back_wings
+    3300002: blades
+    3300004: body
+    3300006: front_wings
+    3300008: frontMetal
+    3300010: Plane
+    3300012: supports
+    3300014: tail
+    3300016: wheel_support
+    3300018: wheels
+    4300000: wheels
+    4300002: wheel_support
+    4300004: frontMetal
+    4300006: Plane
+    4300008: blades
+    4300010: supports
+    4300012: tail
+    4300014: back_wings
+    4300016: front_wings
+    4300018: body
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: blades
+    second: {fileID: 2100000, guid: 0a970ed23c905794b89512eb39631943, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: body
+    second: {fileID: 2100000, guid: c25bd8bfc56685348a8d1ce8bb16c67e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: chromemetal
+    second: {fileID: 2100000, guid: 3cd692468af22c846a85567c7b157ffc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: seats
+    second: {fileID: 2100000, guid: 0676e6246dfe0284da24ef2c6e661d4d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: supports
+    second: {fileID: 2100000, guid: f11024c080a2bbb4e995b4aab78b00c1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wheels
+    second: {fileID: 2100000, guid: 6d5e451f771440c4986c32d25ad7cf8d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wings
+    second: {fileID: 2100000, guid: 1c0d00ed251fb444daad99a03de1a18f, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
