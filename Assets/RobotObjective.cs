@@ -5,23 +5,23 @@ using UnityEngine;
 
 public class RobotObjective : MonoBehaviour
 {
-	public RobotBehaviourScript RobotBehaviourScript { get; private set; }
+	public Receiver Receiver { get; private set; }
 
 	private void OnTriggerEnter(Collider other)
 	{
 		if (other.gameObject.HasComponent<RobotBehaviourScript>())
 		{
-			this.RobotBehaviourScript = other.gameObject.GetComponent<RobotBehaviourScript>();
+			this.Receiver = other.gameObject.GetComponent<Receiver>();
 		}
 	}
 
 	private void OnTriggerExit(Collider other)
 	{
-		if (other.gameObject.HasComponent<RobotBehaviourScript>() && 
-		    RobotBehaviourScript != null &&
-		    other.gameObject.GetComponent<RobotBehaviourScript>().Equals(this.RobotBehaviourScript))
+		if (other.gameObject.HasComponent<Receiver>() && 
+		    Receiver != null &&
+		    other.gameObject.GetComponent<Receiver>().Equals(this.Receiver))
 		{
-			this.RobotBehaviourScript = null;
+			this.Receiver = null;
 		}
 	} 
 }

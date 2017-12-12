@@ -1,9 +1,11 @@
 ﻿using System;
+using System.CodeDom;
 using System.Collections.Generic;
 using System.Reflection;
 using System.Security.Policy;
 using UnityEngine;
 using Valve.VR;
+using Valve.VR.InteractionSystem;
 
 public class Receiver : MonoBehaviour
 {
@@ -118,9 +120,21 @@ public class Receiver : MonoBehaviour
     {
         if (currentScript == GetComponents<RobotBehaviourScript>().Length-1 && !shouldLoop)
         {
+            Done();
             StopScripts();
         }
         currentScript = (currentScript + 1) % GetComponents<RobotBehaviourScript>().Length;
+    }
+    /// <summary>
+    /// checks if it hit an objective when done
+    /// </summary>
+    private void Done()
+    {
+        Debug.Log("done");
+        if (FindObjectOfType<RobotObjective>().Receiver == this)
+        {
+            FindObjectOfType<ParticleTrigger>().TriggerParticles();
+        }
     }
 
     /// <summary>
