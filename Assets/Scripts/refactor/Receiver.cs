@@ -131,9 +131,11 @@ public class Receiver : MonoBehaviour
     private void Done()
     {
         Debug.Log("done");
-        if (FindObjectOfType<RobotObjective>().Receiver == this)
+        var receiver = FindObjectOfType<RobotObjective>().Receiver;
+        if (this == receiver)
         {
-            FindObjectOfType<ParticleTrigger>().TriggerParticles();
+            var particles = FindObjectOfType<ParticleTrigger>();
+            particles.TriggerParticles();
         }
     }
 
