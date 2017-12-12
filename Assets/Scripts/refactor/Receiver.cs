@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Reflection;
 using System.Security.Policy;
 using UnityEngine;
+using Valve.VR;
 
 public class Receiver : MonoBehaviour
 {
@@ -157,6 +158,7 @@ public class Receiver : MonoBehaviour
 //            AddScript(other.GetComponent<Transmitter>());
         }
     }
+
     /// <summary>
     /// Add a script from a transmitter
     /// </summary>
@@ -167,7 +169,8 @@ public class Receiver : MonoBehaviour
         var script = (RobotBehaviourScript) gameObject.AddComponent(transmitter.BehaviourScript.GetType());
         transmitter.BehaviourScript.Copy(ref script);
         currentScript = 0;
-        SetCurrentActive();
+//        SetCurrentActive();
+        StopScripts();
     }
 
     /// <summary>
@@ -207,7 +210,7 @@ public class Receiver : MonoBehaviour
     /// </summary>
     public void StopScripts()
     {
-        foreach (RobotBehaviourScript script in gameObject.GetComponents<RobotBehaviourScript>())
+        foreach (var script in gameObject.GetComponents<RobotBehaviourScript>())
         {
             script.Enabled = false;
         }
