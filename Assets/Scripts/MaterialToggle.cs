@@ -13,8 +13,16 @@ public class MaterialToggle : MonoBehaviour
 {
     [Header("Button touch actions")] public Material ColorOn;
     public Material ColorOff;
-    public GameObject[] Objects;
+    public GameObject[] Objects = new GameObject[0];
     public bool TurnedOn = false;
+
+    private void Start()
+    {
+        if (Objects == null)
+        {
+            Objects = new[] {gameObject};
+        }
+    }
 
     public void ApplyColor()
     {

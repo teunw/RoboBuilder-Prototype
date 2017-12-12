@@ -81,6 +81,11 @@ public class ConnectPoint : GrabbableObjectMidair
             return;
         }
 
+        if (Receiver == null)
+        {
+            Receiver = FindObjectOfType<Receiver>();
+            Debug.Log("Found receiver " + Receiver.name);
+        }
         this.Receiver.AddScript(this._inCurrentTransmitter);
         ResetLineAndPoint();
         MoveToNextObject();
