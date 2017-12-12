@@ -15,6 +15,7 @@ public class Receiver : MonoBehaviour
     private Vector3 startScale;
 
     public bool scriptsEnabled = true;
+    public bool shouldLoop;
     
     /// <summary>
     /// Used as the index of the current script
@@ -115,6 +116,10 @@ public class Receiver : MonoBehaviour
 
     private void increment()
     {
+        if (currentScript == GetComponents<RobotBehaviourScript>().Length-1 && !shouldLoop)
+        {
+            StopScripts();
+        }
         currentScript = (currentScript + 1) % GetComponents<RobotBehaviourScript>().Length;
     }
 
@@ -123,6 +128,11 @@ public class Receiver : MonoBehaviour
     /// </summary>
     private void SetCurrentActive()
     {
+        if (!scriptsEnabled)
+        {
+            StopScripts();
+            return;
+        }
         RobotBehaviourScript[] scripts;
         scripts = GetComponents<RobotBehaviourScript>();
         for (int i = 0; i < scripts.Length; i++)

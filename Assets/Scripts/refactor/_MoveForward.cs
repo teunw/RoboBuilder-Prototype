@@ -23,8 +23,8 @@ public class _MoveForward : RobotBehaviourScript
         if (Enabled)
         {
             float step = Speed * Time.deltaTime;
-            transform.position = Vector3.MoveTowards(transform.position, startPosition + addVectorAndRotate(), step);
-            if (transform.position == startPosition + addVectorAndRotate())
+            transform.position = Vector3.MoveTowards(transform.position, startPosition + AddVectorAndRotate(), step);
+            if (transform.position == startPosition + AddVectorAndRotate())
             {
                 startPosition = transform.position;
                 Done();
@@ -36,7 +36,7 @@ public class _MoveForward : RobotBehaviourScript
     /// todo : make this not hardcoded
     /// </summary>
     /// <returns></returns>
-    Vector3 addVectorAndRotate()
+    Vector3 AddVectorAndRotate()
     {
         switch ((int) transform.rotation.eulerAngles.y)
         {

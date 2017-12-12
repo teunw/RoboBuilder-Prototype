@@ -27,9 +27,20 @@ public class _Rotate : RobotBehaviourScript {
 			startDegree = transform.eulerAngles.y;
 		}
 	}
+	private bool _wasDisabled = true;
+
 	void Update () {
+		if (!Enabled)
+		{
+			_wasDisabled = true;
+		}
 		if (Enabled)
 		{
+			if (_wasDisabled)
+			{
+				startDegree = transform.eulerAngles.y;
+				_wasDisabled = false;
+			}
 			Vector3 deltaStep = Step * Time.deltaTime;
 			if (Current.y + deltaStep.y < Total.y)
 			{
