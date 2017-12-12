@@ -16,12 +16,20 @@ public class _MoveForward : RobotBehaviourScript
         _rigidbody = GetComponent<Rigidbody>();
         startPosition = transform.position;
     }
-
+    private bool _wasDisabled = true;
     void Update()
     {
-        
+        if (!Enabled)
+        {
+            _wasDisabled = true;
+        }
         if (Enabled)
         {
+            if (_wasDisabled)
+            {
+                startPosition = transform.position;
+                _wasDisabled = false;
+            }
             float step = Speed * Time.deltaTime;
             transform.position = Vector3.MoveTowards(transform.position, startPosition + AddVectorAndRotate(), step);
             if (transform.position == startPosition + AddVectorAndRotate())

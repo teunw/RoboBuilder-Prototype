@@ -39,6 +39,20 @@ ModelImporter:
     100062: Sphere001
     100064: Tube001
     100066: Tube002
+    100068: Box013
+    100070: Box015
+    100072: Box016
+    100074: Box017
+    100076: Box018
+    100078: Box019
+    100080: Box020
+    100082: Box021
+    100084: Box022
+    100086: Box023
+    100088: Box024
+    100090: Box025
+    100092: Cylinder008
+    100094: Cylinder009
     400000: Box001
     400002: Box002
     400004: Box003
@@ -73,6 +87,20 @@ ModelImporter:
     400062: Sphere001
     400064: Tube001
     400066: Tube002
+    400068: Box013
+    400070: Box015
+    400072: Box016
+    400074: Box017
+    400076: Box018
+    400078: Box019
+    400080: Box020
+    400082: Box021
+    400084: Box022
+    400086: Box023
+    400088: Box024
+    400090: Box025
+    400092: Cylinder008
+    400094: Cylinder009
     2300000: Box001
     2300002: Box002
     2300004: Box003
@@ -100,6 +128,20 @@ ModelImporter:
     2300048: Sphere001
     2300050: Tube001
     2300052: Tube002
+    2300054: Box013
+    2300056: Box015
+    2300058: Box016
+    2300060: Box017
+    2300062: Box018
+    2300064: Box019
+    2300066: Box020
+    2300068: Box021
+    2300070: Box022
+    2300072: Box023
+    2300074: Box024
+    2300076: Box025
+    2300078: Cylinder008
+    2300080: Cylinder009
     3300000: Box001
     3300002: Box002
     3300004: Box003
@@ -127,6 +169,20 @@ ModelImporter:
     3300048: Sphere001
     3300050: Tube001
     3300052: Tube002
+    3300054: Box013
+    3300056: Box015
+    3300058: Box016
+    3300060: Box017
+    3300062: Box018
+    3300064: Box019
+    3300066: Box020
+    3300068: Box021
+    3300070: Box022
+    3300072: Box023
+    3300074: Box024
+    3300076: Box025
+    3300078: Cylinder008
+    3300080: Cylinder009
     4300000: Plane001
     4300002: Box006
     4300004: Box007
@@ -154,6 +210,20 @@ ModelImporter:
     4300048: Cylinder002
     4300050: Tube001
     4300052: Tube002
+    4300054: Box013
+    4300056: Box015
+    4300058: Box016
+    4300060: Box017
+    4300062: Box018
+    4300064: Box019
+    4300066: Box020
+    4300068: Box021
+    4300070: Cylinder008
+    4300072: Box022
+    4300074: Cylinder009
+    4300076: Box023
+    4300078: Box024
+    4300080: Box025
     9500000: //RootNode
   externalObjects:
   - first:
@@ -206,6 +276,11 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: 19 - Default
     second: {fileID: 2100000, guid: bb91a40e41b3e064d999be4f44e30682, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 21 - Default
+    second: {fileID: 2100000, guid: c2590fa3323e806488672fed912e51b2, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
